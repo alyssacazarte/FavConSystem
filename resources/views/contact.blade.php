@@ -1,3 +1,4 @@
+
 <h1>Contact Page</h1>
 
 <form action="{{ route('contact.book') }}" method="POST">
@@ -6,7 +7,7 @@
     <label for="service_id">Select Service:</label>
     <select name="service_id" id="service_id">
         @foreach ($services as $service)
-            <option value="{{ $service->service_id }}">{{ $service->service_type }}</option>
+            <option value="{{ $service->id }}">{{ $service->service_type }}</option>
         @endforeach
     </select>
 
@@ -17,9 +18,10 @@
         @endforeach
     </select> -->
 
+  
     <label for="date">Date:</label>
     <input type="date" name="date" id="date">
-    @dd($schedules)
+
     <label for="start_time">Start Time:</label>
     <input type="time" name="start_time" id="start_time">
 

@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact/book', [ContactController::class, 'book'])->name('contact.book');
-Route::post('/get-available-times', [ContactController::class, 'getAvailableTimes'])->name('getAvailableTimes');
+Route::get('/thank-you', [ContactController::class, 'thankyou'])->name('contact.thankyou');
 
 

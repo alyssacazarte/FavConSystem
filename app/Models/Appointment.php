@@ -14,10 +14,13 @@ class Appointment extends Model
         'service_id',
         'name',
         'date',
-        'start-time',
+        'start_time',
         'email',
         'address',
         'phone_no',
         'notes',
     ];
+    public function request(){
+        return $this->belongsTo(Request::class);
+    }
 }

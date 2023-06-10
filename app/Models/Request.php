@@ -11,7 +11,11 @@ class Request extends Model
 
     protected $fillable = [
         'date',
-        'start-time',
+        'start_time',
         'status'
+
     ];
+    public function appointment(){
+        return $this->hasOne(Appointment::class);
+    }
 }

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Schedule;
+use App\Models\Request as Requests;
 use App\Models\Appointment;
-use App\Http\Request\BookingRequest;
+use App\Http\Requests\BookingRequest;
+
 
 class ContactController extends Controller
 {
@@ -22,28 +24,13 @@ class ContactController extends Controller
 
         return view('contact', compact('services', 'schedules'));
     }
+
     public function book(BookingRequest $request)
     {
-        // dd($request);
-        // Validate user input
-        // $validatedData = $request->validate([
-        //     'service_id' => 'required|exists:services,service_id',
-        //     'schedule_id' => 'required|exists:schedules,schedule_id',
-        //     'date' => 'required|date',
-        //     'start_time' => 'required|date_format:H:i',
-        //     'end_time' => 'required|date_format:H:i',
-        //     'name' => 'required|string',
-        //     'email' => 'required|email',
-        //     'address' => 'required|string',
-        //     'phone_no' => 'required|numeric',
-        //     'notes' => 'nullable|string',
-        // ]);
+        $req = Requests::create($request->validated());
+        $req->appointment()->create($request->validated());
 
-        // Create appointment
-        $user = Appointment::create($validatedData->validated());
-
-        if ($user) {
-            
+        if ($req) {
             return redirect()->route('contact.thankyou');
         } 
 
