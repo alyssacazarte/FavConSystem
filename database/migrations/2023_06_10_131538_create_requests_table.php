@@ -17,7 +17,7 @@ class CreateRequestsTable extends Migration
             $table->id();
             $table->date('date');
             $table->time('start_time');
-            $table->string('status')->default('false');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }

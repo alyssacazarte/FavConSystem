@@ -11,14 +11,17 @@ class ConfirmationEmail extends Notification
 {
     use Queueable;
 
+    protected $message;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($message)
     {
-        //
+        $this->message = $message;
+
     }
 
     /**
@@ -41,7 +44,7 @@ class ConfirmationEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
+                    ->line($this->message)
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
