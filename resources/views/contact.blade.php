@@ -1,6 +1,5 @@
 
 <h1>Contact Page</h1>
-
 <form action="{{ route('contact.book') }}" method="POST">
     @csrf
 
@@ -10,15 +9,6 @@
             <option value="{{ $service->id }}">{{ $service->service_type }}</option>
         @endforeach
     </select>
-
-    <!-- <label for="schedule_id">Select Schedule:</label>
-    <select name="schedule_id" id="schedule_id">
-        @foreach ($schedules as $schedule)
-            <option value="{{ $schedule->schedule_id }}">{{ $schedule->date }}</option>
-        @endforeach
-    </select> -->
-
-  
     <label for="date">Date:</label>
     <input type="date" name="date" id="date">
 

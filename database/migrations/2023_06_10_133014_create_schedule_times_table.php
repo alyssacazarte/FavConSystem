@@ -15,10 +15,9 @@ class CreateScheduleTimesTable extends Migration
     {
         Schema::create('schedule_times', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('schedule_id')->nullable();
-            $table->time('start_time');
-            $table->time('end_time');
-            $table->timestamps();
+            $table->unsignedBigInteger('schedule_id');
+            $table->string('start_time');
+            $table->string('end_time');
         });
     }
 

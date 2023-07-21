@@ -18,7 +18,6 @@ class RequestController extends Controller
     public function updateStatus(Request $request, Requests $req)
     {
         $message = $request->all()["status"];
-        // $schedule->update($request->all())
         $user = $req->appointment;
 
         $user->notify(new ConfirmationEmail($message));

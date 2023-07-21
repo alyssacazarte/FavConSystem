@@ -19,12 +19,12 @@ class CreateAppointmentsTable extends Migration
             $table->string('service_id');
             $table->string('date');
             $table->string('start_time');
+            $table->string('end_time');
             $table->string('name');
             $table->string('email');
             $table->string('address');
             $table->string('phone_no');
             $table->text('notes')->nullable();
-            $table->timestamps();
         });
     }
 

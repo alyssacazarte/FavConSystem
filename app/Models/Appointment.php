@@ -10,6 +10,7 @@ class Appointment extends Model
 {
     use Notifiable;
     // protected $table = 'appointments';
+    public $timestamps = false;
     
     protected $fillable = [
         'request_id',
@@ -17,6 +18,7 @@ class Appointment extends Model
         'name',
         'date',
         'start_time',
+        'end_time',
         'email',
         'address',
         'phone_no',
