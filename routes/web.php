@@ -8,6 +8,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdvocacyController;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,5 +39,7 @@ Route::get('/success', [ScheduleController::class, 'notification'])->name('sched
 Route::get('/portfolio', [PortfolioController::class, 'index']);
 //Advocacy Route
 Route::get('/advocacy', [AdvocacyController::class, 'index']);
+//About Route
+Route::get('/about', [AboutController::class, 'index']);
 
 
