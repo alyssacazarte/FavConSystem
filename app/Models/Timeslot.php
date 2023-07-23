@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Timeslot extends Model
 {
     use HasFactory;
 
     public $timestamps = false;
 
     protected $fillable = [
-        'type',
-        'description',
-        'duration',
-        'timeslot_id',
-        'status'
+        'id',
+        'start_time',
+        'end_time',
+        'status',
+        'schedule_id'
     ];
-
 }
