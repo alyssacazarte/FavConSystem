@@ -6,6 +6,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\AdvocacyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +20,7 @@ use App\Http\Controllers\CalendarController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('portfolio');
 });
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
@@ -31,5 +33,10 @@ Route::post('/schedule/update/{id}', [ScheduleController::class, 'update'])->nam
 Route::post('/schedule/create', [ScheduleController::class, 'create'])->name('schedule.create');
 Route::get('/schedule/thankyou', [ScheduleController::class, 'thankyou'])->name('schedule.thankyou');
 Route::get('/success', [ScheduleController::class, 'notification'])->name('schedule.notification');
+
+//Portfolio Route
+Route::get('/portfolio', [PortfolioController::class, 'index']);
+//Advocacy Route
+Route::get('/advocacy', [AdvocacyController::class, 'index']);
 
 
