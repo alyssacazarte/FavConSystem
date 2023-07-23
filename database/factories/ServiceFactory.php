@@ -22,7 +22,7 @@ class ServiceFactory extends Factory
             'type' => $this->faker->name(),
             'description' => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ipsam nobis repellat eius, odio quod quaerat veniam quo et consequuntur ratione ut cumque sed facere, voluptatem quibusdam commodi sequi. Non.",
             'duration' => "45 minutes",
-            'timeslot_id' => $this->faker->randomDigitNotNull(),
+            'schedule_id' => $this->faker->randomDigitNotNull(),
             'status' => 'Active',
         ];
     }

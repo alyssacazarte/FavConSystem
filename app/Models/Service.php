@@ -15,8 +15,12 @@ class Service extends Model
         'type',
         'description',
         'duration',
-        'timeslot_id',
+        'schedule_id',
         'status'
     ];
+
+    public function schedule(){
+        return $this->belongsTo(Schedule::class, 'schedule_id', 'id');
+    }
 
 }

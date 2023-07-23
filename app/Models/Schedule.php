@@ -14,10 +14,20 @@ class Schedule extends Model
 
     protected $fillable = [
         'date',
-        'status'
+        'status',
+        // 'timeslot_id'
     ];
+
     public function scheduleTimes(){
         return $this->hasMany(ScheduleTime::class);
+    }
+
+    public function service(){
+        return $this->hasOne(Service::class);
+    }
+
+    public function timeslot(){
+        return $this->hasMany(Timeslot::class, 'schedule_id', 'id');
     }
 }
 

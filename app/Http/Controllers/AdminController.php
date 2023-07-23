@@ -76,17 +76,18 @@ class AdminController extends Controller
     public function specificServices($id)
     {
         $specificServices = Service::find($id);
+
         return view('admin/services_view', ['data'=>$specificServices]);
     }
 
     public function viewServices(Request $request)
     {
         $updateServices = Service::find($request->id);
+
         if ($updateServices) {
             $updateServices->services_type = $request->input('type');
             $updateServices->service_description = $request->input('description');
             $updateServices->service_duration = $request->input('duration');
-            $updateServices->save();
             return redirect('/admin/services')->with('success', 'Password updated successfully');
             // return $request->input();
         } else {
