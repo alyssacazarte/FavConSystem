@@ -8,11 +8,9 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdvocacyController;
-add/admin
 use App\Http\Controllers\AdminController;
-=======
 use App\Http\Controllers\AboutController;
-main
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
