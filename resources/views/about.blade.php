@@ -18,7 +18,7 @@
     <!-- ======== Header ======== -->
     <div style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);" class="header">
         <div class="logo">
-        <img src="{{ asset('images/Logo.png') }}" alt="Logo">
+            <img src="{{ asset('images/Logo.png') }}" alt="Logo">
         </div>
         <nav>
             <ul>
@@ -81,10 +81,12 @@
                 <div id="myModal" class="modal">
                     <div class="modal-content">
                         <span class="exit">&times;</span><br><br>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati fugiat fugit
-                            vero laudantium,
-                            accusamus amet ipsa aut vitae nobis totam doloremque corrupti officiis quisquam!
-                            Aliquam debitis molestias exercitationem cum in.</p>
+                        <p>Additionally, he has achieved national recognition as CES 2022 honoree award and South by
+                            SouthWest nominee for best in innovation under the tech focus led brand LetsPlott. Favio’s
+                            marketing expertise has allowed him to expand into consulting influencer talent who have
+                            amassed six to seven-figure followings. Favio’s extensive industry experience has proven his
+                            intellect in regard to the neverending outlook of the marketing world.
+                        </p>
                     </div>
                 </div>
 
@@ -122,10 +124,10 @@
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">
         <ul>
-            <li><a href="./index.html">Portfolio</a></li>
-            <li><a href="./advocay.html">Advocacy</a></li>
-            <li><a href="./about.html">About Me</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./index">Portfolio</a></li>
+            <li><a href="./advocacy">Advocacy</a></li>
+            <li><a href="./about">About Me</a></li>
+            <li><a href="./contact">Contact</a></li>
         </ul>
         <hr>
 

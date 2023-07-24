@@ -13,16 +13,17 @@
     <link href="{{ asset('css/portfolio.css') }}" rel="stylesheet">
     <title>Portfolio</title>
 </head>
+
 <body>
 
     <!-- ======== Header ======== -->
     <div style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);" class="header">
         <div class="logo">
-        <img src="{{ asset('images/Logo.png') }}" alt="Logo">
+            <img src="{{ asset('images/Logo.png') }}" alt="Logo">
         </div>
         <nav>
             <ul>
-                <li><a class="active" href="#">Portfolio</a></li>
+                <li><a class="active" href="portfolio">Portfolio</a></li>
                 <li><a href="advocacy">Advocacy</a></li>
                 <li><a href="about">About</a></li>
                 <li><a href="contact">Contact</a></li>
@@ -52,7 +53,7 @@
                 </div>
             </div>
             <div class="image">
-            <img src="{{ asset('images/profile.png') }}" alt="Profile">
+                <img src="{{ asset('images/profile.png') }}" alt="Profile">
             </div>
         </div><br><br>
 
@@ -73,13 +74,12 @@
                 <div class="carousel">
 
                     <div class="card_project">
-                    <img src="{{ asset('images/aphelion.png') }}" alt="Aphelion">
+                        <img src="{{ asset('images/aphelion.png') }}" alt="Aphelion">
                         <div class="card-content">
-                            <h2>Creative Project Lead</h2><br>
+                            <h2>Creative Project Lead</h2><br><br>
                             <p> Trained over 22 influencer talent
                                 accounts increasing our network following
-                                by over 700,000 combined • Directed all Internal content on YouTube,
-                                Twitter, Instagram, capturing over 15,000 new followers</p>
+                                by over 700,000 combined.</p>
 
                             <button onclick="document.getElementById('id02').style.display='block'" class="btn"
                                 style="font-size: 12px;font-weight: bold; margin-bottom: 1rem;"><a href="#">READ
@@ -88,26 +88,15 @@
 
                             <div id="id01" class="w3-modal">
                                 <div class="w3-modal-content">
-                                <div class="w" style="background-image: url({{ asset('images/aboutb.png') }}); background-repeat: no-repeat; background-size: cover;">
+                                    <div class="w"
+                                        style="background-image: url({{ asset('images/aboutb.png') }}); background-repeat: no-repeat; background-size: cover;">
                                         <span onclick="document.getElementById('id01').style.display='none'"
                                             class="w3-button w3-display-topright">&times;</span>
-                                        <h5 style="padding: 3rem; text-align: justify;">Lorem ipsum dolor, sit amet
-                                            consectetur adipisicing elit.
-                                            Iure quibusdam tempore voluptatem laborum, fuga saepe similique, itaque ea
-                                            hic
-                                            exercitationem obcaecati delectus porro illum animi dolor rem provident
-                                            neque
-                                            deserunt iste, harum dolores. Pariatur deserunt asperiores aspernatur ab
-                                            quo,
-                                            magni hic eum minima. Asperiores, itaque necessitatibus voluptatem eos a
-                                            quasi
-                                            ut placeat nobis veniam voluptatibus quia! Assumenda, nemo non omnis ducimus
-                                            harum beatae in facere quis dolore laboriosam molestiae id doloremque
-                                            laudantium
-                                            repellat nesciunt maiores cumque. Eaque sit earum accusantium magnam
-                                            laboriosam
-                                            sapiente quo similique fugiat, maxime, sequi cum consequatur amet fuga magni
-                                            quam soluta dolores culpa. Autem, dignissimos laborum!.</h5>
+                                        <h5 style="padding: 3rem; text-align: justify;">
+                                            <li>Coordinated with over 12+ influencer and commentary talent for
+                                                interviews and participation while live.</li>
+                                            <li> Moderated Team Liquid Mobile discord server of 30,000 members.</li>
+                                        </h5>
 
                                     </div>
                                 </div>
@@ -117,13 +106,13 @@
 
 
                     <div class="card_project">
-                    <img src="{{ asset('images/teamliquid.png') }}" alt="TeamLiquid">
+                        <img src="{{ asset('images/teamliquid.png') }}" alt="TeamLiquid">
                         <div class="card-content">
-                            <h2>Creative Project Lead</h2><br>
-                            <p> Trained over 22 influencer talent
-                                accounts increasing our network following
-                                by over 700,000 combined • Directed all Internal content on YouTube,
-                                Twitter, Instagram, capturing over 15,000 new followers</p>
+                            <h2>Event Coordinator</h2><br>
+                            <p> Launched the “Team Liquid Tournament” an esports event with over $1,000 of prizes
+                                tournament garnered 500,000+ views across Live
+                                Streams and YouTube post streams, presented ideas for side events, community
+                                participation and more.</p>
 
                             <button onclick="document.getElementById('id01').style.display='block'" class="btn"
                                 style="font-size: 12px;font-weight: bold; margin-bottom: 1rem;"><a href="#">READ
@@ -132,26 +121,19 @@
 
                             <div id="id02" class="w3-modal">
                                 <div class="w3-modal-content">
-                                <div class="w" style="background-image: url({{ asset('images/aboutb.png') }}); background-repeat: no-repeat; background-size: cover;">
+                                    <div class="w"
+                                        style="background-image: url({{ asset('images/aboutb.png') }}); background-repeat: no-repeat; background-size: cover;">
                                         <span onclick="document.getElementById('id02').style.display='none'"
                                             class="w3-button w3-display-topright">&times;</span>
-                                        <h5 style="padding: 3rem; text-align: justify;">Lorem ipsum dolor, sit amet
-                                            consectetur adipisicing elit.
-                                            Iure quibusdam tempore voluptatem laborum, fuga saepe similique, itaque ea
-                                            hic
-                                            exercitationem obcaecati delectus porro illum animi dolor rem provident
-                                            neque
-                                            deserunt iste, harum dolores. Pariatur deserunt asperiores aspernatur ab
-                                            quo,
-                                            magni hic eum minima. Asperiores, itaque necessitatibus voluptatem eos a
-                                            quasi
-                                            ut placeat nobis veniam voluptatibus quia! Assumenda, nemo non omnis ducimus
-                                            harum beatae in facere quis dolore laboriosam molestiae id doloremque
-                                            laudantium
-                                            repellat nesciunt maiores cumque. Eaque sit earum accusantium magnam
-                                            laboriosam
-                                            sapiente quo similique fugiat, maxime, sequi cum consequatur amet fuga magni
-                                            quam soluta dolores culpa. Autem, dignissimos lab</h5>
+                                        <h5 style="padding: 3rem; text-align: justify;">
+                                            <li>Directed all Internal content on YouTube, Twitter, Instagram, capturing
+                                                over 15,000 new followers.</li>
+                                            <li>Esports teams over 1 year time period competed for over $1,050,000+.
+                                            </li>
+                                            <li>Assisted in securing funding ($50,000+) and creating pitch decks for
+                                                investors and sponsors.</li>
+                                            <li>Negotiated in Spanish for new influencer talent and esports teams.</li>
+                                        </h5>
 
                                     </div>
                                 </div>
@@ -179,14 +161,14 @@
         <div class="serviceBox">
             <div class="box">
                 <div class="card">
-                    <div class="icon">  
+                    <div class="icon">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <div>
                         <div class="text">Social Media <br> Management / Marketing</div><br>
                         <p>This service involves managing and maintaining your social media profiles on various
-                            platforms such as Facebook,
-                            Twitter, Instagram, and LinkedIn.
+                            platforms, such as Facebook, Twitter, Instagram, and LinkedIn. It also involves developing
+                            and executing a social media strategy to promote your business, brand, or product.
                         </p><br>
                         <span class="click-span" style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE
                         </span>
@@ -194,9 +176,13 @@
                             <div class="modal-content">
                                 <span class="close-btn">&times;</span>
                                 <h2> More about: </h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, magnam obcaecati
-                                    necessitatibus hic, error ipsum saepe
-                                    quo atque ratione optio sunt. Debitis quae in eum quos quod. Quo, nihil ea.</p>
+                                <p>I would be responsible for creating and curating content, scheduling posts, engaging
+                                    with followers, and monitoring analytics to measure the success of the social media
+                                    strategy. Moreover, I would be responsible for creating and curating content,
+                                    scheduling posts, engaging with followers, and monitoring analytics to measure the
+                                    success of the social media strategy. The goal of social media marketing is to
+                                    increase brand awareness, generate leads, and drive traffic to the client's website.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -210,17 +196,19 @@
                     </div>
                     <div>
                         <div class="text">Paid Social Ads</div><br>
-                        <p>This service involves creating visual content for various marketing
-                            materials such as social media posts, email campaigns, websites, and print materials.
-                        </p><br><br>
+                        <p>This service involves creating and managing paid advertising campaigns on social media
+                            platforms such as Facebook, Instagram, Twitter, and LinkedIn.
+                        </p><br><br><br><br>
                         <span class="click-test"
                             style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE</span>
                         <div class="test">
                             <div class="modal-content">
                                 <span class="close-test">&times;</span>
                                 <h2> More about: </h2>
-                                <p>bla bla bla Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias,
-                                    quasi..</p>
+                                <p>I would be responsible for identifying the target audience, developing ad copy and
+                                    creative, setting up and monitoring the ad campaign, and analyzing the results to
+                                    optimize the campaign for maximum ROI.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -234,8 +222,8 @@
                     </div>
                     <div>
                         <div class="text">Graphic Design</div><br>
-                        <p>This service involves developing and executing a social media strategy
-                            to promote your business, brand, or product.
+                        <p>This service involves creating visual content for various marketing materials such as social
+                            media posts, email campaigns, websites, and print materials.
                         </p><br><br><br>
                         <span class="click-third"
                             style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE</span>
@@ -243,8 +231,10 @@
                             <div class="modal-content">
                                 <span class="close-third">&times;</span>
                                 <h2> More about: </h2>
-                                <p>chanext cute Lorem ipsum dolor sit amet., sit amet consectetur adipisicing elit. Molestias,
-                                    quasi..</p>
+                                <p>I would be responsible for creating design concepts, selecting images and typography,
+                                    and producing high-quality graphics that align with the client's brand and
+                                    messaging.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -259,16 +249,18 @@
                     <div>
                         <div class="text">Marketing / Branding <br> Consulting</div>
                         <p>This service involves providing strategic advice and guidance on marketing and branding
-                            initiatives
-                            to help clients achieve their business objectives. </p><br>
-                            <span class="click-fourt"
+                            initiatives to help clients achieve their business objectives.</p><br><br><br><br>
+                        <span class="click-fourt"
                             style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE</span>
                         <div class="fourt">
                             <div class="modal-content">
                                 <span class="close-fourt">&times;</span>
                                 <h2> More about: </h2>
-                                <p>chanext cute og gwapo Lorem ipsum dolor sit amet., sit amet consectetur adipisicing elit. Molestias,
-                                    quasi..</p>
+                                <p>I would be responsible for analyzing the client's current marketing efforts,
+                                    identifying opportunities for improvement, and developing a comprehensive plan for
+                                    achieving their goals. I would also provide ongoing support and advice to ensure the
+                                    client's marketing and branding initiatives are successful.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -304,10 +296,10 @@
     <div class="f-footer" id="f-footer">
 
         <ul>
-            <li><a href="./index.html">Portfolio</a></li>
-            <li><a href="./advocay.html">Advocacy</a></li>
-            <li><a href="./about.html">About Me</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./portfolio">Portfolio</a></li>
+            <li><a href="./advocacy">Advocacy</a></li>
+            <li><a href="./about">About Me</a></li>
+            <li><a href="./contact">Contact</a></li>
         </ul>
         <hr>
 
