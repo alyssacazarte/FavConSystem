@@ -8,15 +8,13 @@ use Illuminate\Notifications\Notifiable;
 
 class Schedule extends Model
 {
-    use Notifiable;
+    use HasFactory;
     // protected $table = 'appointments';
     public $timestamps = false;
-    
+
     protected $fillable = [
         'date',
-        'start_time',
-        'end_time',
-
+        'status'
     ];
     public function scheduleTimes(){
         return $this->hasMany(ScheduleTime::class);
