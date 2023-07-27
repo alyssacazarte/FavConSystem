@@ -20,7 +20,7 @@ class Timeslot extends Model
     ];
 
     public function timeslot() {
-        return $this->belongsTo('App/Models/Service');
+        return $this->belongsTo(Service::class, 'timeslot-id');
     }
 
     public function timeslots() {
