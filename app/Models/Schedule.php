@@ -16,8 +16,8 @@ class Schedule extends Model
         'date',
         'status'
     ];
-    public function scheduleTimes(){
-        return $this->hasMany(ScheduleTime::class);
+    public function schedule() {
+        return $this->belongsTo(Timeslot::class);
     }
 }
 

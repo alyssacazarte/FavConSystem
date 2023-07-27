@@ -18,4 +18,12 @@ class Timeslot extends Model
         'status',
         'schedule_id'
     ];
+
+    public function timeslot() {
+        return $this->belongsTo('App/Models/Service');
+    }
+
+    public function timeslots() {
+        return $this->hasMany(Timeslot::class);
+    }
 }
