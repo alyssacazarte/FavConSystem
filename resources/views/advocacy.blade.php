@@ -116,7 +116,7 @@
                 <div class="card-modal-overlay">
                     <div class="card-modal-content">
                         <p class="card-definition-full">
-                            <img src="img/1.png" alt=""><br><br>
+                        <img src="{{ asset('images/1.png') }}" alt="Image"><br><br>
                             <small>• Leads group
                                 of customer service admins to monitor and serve over 31,0000 monthly
                                 delivery food orders. <br><br>
@@ -129,7 +129,7 @@
                                 software
                                 sales. <br><br>
 
-                                • Write and distribute email, correspondence memos, letters, faxes and forms
+                                • Write and distribute email, correspondence memos, letters, faxes and forms.
                             </small>
                         </p>
                         <button class="btn-close">Close</button>
@@ -139,7 +139,7 @@
 
             </div>
             <div class="card">
-                <img src="{{ asset('images/2.png') }}" alt="Image 1" class="card-image">
+                <img src="{{ asset('images/2.png') }}" alt="Image" class="card-image">
                 <h3 class="card-title">LetsPlott</h3>
                 <p class="card-definition">Social Media Manager</p>
                 <button class="btn-read-more"><a>Read More</a></button>
@@ -148,22 +148,22 @@
                 <div class="card-modal-overlay">
                     <div class="card-modal-content">
                         <p class="card-definition-full">
-                            <img src="{{ asset('images/2.png') }}" alt=""><br><br>
+                            <img src="{{ asset('images/2.png') }}" alt="Image"><br><br>
                             <small>• Managed a
                                 budget of $250,000 dollars in yearly ad spend on social media + e-commerce, which
                                 generated
                                 $37,500 in monthly gross
-                                sales revenue <br><br>
+                                sales revenue. <br><br>
                                 • Best in App honoree at CES 2022 for our newest advancements in XR and AR within our
                                 App,
                                 assisted in Awards submission, in app
-                                testing, taking photos, coordinating slides and more <br><br>
+                                testing, taking photos, coordinating slides and more. <br><br>
                                 • Directed all content and strategy on TikTok, YouTube, Instagram and Facebook;
                                 Instagram
                                 engagement increase by 50%, 35 million global
-                                impressions combined <br><br>
+                                impressions combined. <br><br>
                                 • Front camera personality, hosted content series/pieces and sprouting new company
-                                culture<br><br>
+                                culture.<br><br>
                                 • Plott is a group of creatives, engineers, inventors, military veteran designers, weekend warriors, and DIYers. Plott is based out of New Jersey with their own factory in Kunshan, China. Through working with construction professionals and our own DIY experiences, Plott understands it’s not easy to change your surroundings. Taking all the necessary measurements for your designs, then applying those designs to your living space is a complicated and time-consuming process. Plott makes smart tools that bring the real world into a visual app. There, you can design with dimensional context, then use our tools to help you install with dimensional guidance—all without the need for calculations.
                             </small>
                         </p>
@@ -183,7 +183,7 @@
                 <div class="card-modal-overlay">
                     <div class="card-modal-content">
                         <p class="card-definition-full">
-                            <img src="img/3.png" alt=""><br><br>
+                        <img src="{{ asset('images/3.png') }}" alt="Image"><br><br>
                             <small>• Executed
                                 social media strategy collaborating with influencers and talent in the “One Tribe
                                 Campaign”
@@ -199,7 +199,7 @@
                                 • Trained and consulted on content with top creator talent, @OrangeJuiceGaming,
                                 @SirTagCR,
                                 @Godzly and more which led to
-                                accumulating over 500,000,000 views over TribeGaming network over a 6 months span
+                                accumulating over 500,000,000 views over TribeGaming network over a 6 months span.<br><br>
                                 • I took up a role at the most prestigious mobile gaming organizations assisting in social media and content creation and working alongside Cody Grey, collaborating with other peers to make some fantastic content for our fans to interact with, while also building Tribe Gaming’s brand voice and fulfilling objectives.<br><br>
                                 • Tribe Gaming is the largest mobile gaming esports organization in North America; point-blank. As the home of the biggest creators and best teams within mobile gaming, they have asserted themselves as the premier brand of the hottest-growing platform in gaming — mobile.<br><br>
                                 

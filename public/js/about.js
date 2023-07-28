@@ -60,3 +60,38 @@ ScrollOut({
          modal.style.display = "none";
      }
  };
+
+const spanElementContact = document.querySelector('.click-icon');
+const icon = document.querySelector('.icon');
+const closeIcon = document.querySelector('.close-icon');
+
+spanElementContact.addEventListener('click', function () {
+  icon.style.display = 'block';
+});
+
+closeIcon.addEventListener('click', function () {
+  icon.style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === icon) {
+      icon.style.display = 'none';
+    }
+});
+const spanElementMail = document.querySelector('.click-icon2');
+const icon2 = document.querySelector('.icon2');
+const closeIcon2 = document.querySelector('.close-icon2');
+
+spanElementMail.addEventListener('click', function () {
+  icon2.style.display = 'block';
+});
+
+closeIcon2.addEventListener('click', function () {
+  icon2.style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === icon2) {
+      icon2.style.display = 'none';
+    }
+});

@@ -103,23 +103,36 @@
 
             <div class="column">
                 <div class="contact-icons">
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-solid fa-mobile-screen"></i></a>
-                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/faviojasso/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/FavioJasso"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://twitter.com/FavioJasso"><i class="fa-brands fa-twitter"></i></a>
+                    <!-- Icon -->
+                    <a class="click-icon"><i class="fa-solid fa-mobile-screen"></i></a>
+                    <div class="icon" style="display: none;">
+                        <div class="modal-icon">
+                            <span class="close-icon">x</span>
+                            <div class="contact-info">
+                                <h2>973-234-2073</h2>
+                                <p>Contact Number</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="click-icon2"><i class="fa-solid fa-envelope"></i></a>
+                    <div class="icon2" style="display: none;">
+                        <div class="modal-icon2">
+                            <span class="close-icon2">x</span>
+                            <div class="contact-info2">
+                                <h2>fjporras04@gmail.com</h2>
+                                <p>Email Address</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
     <!-- =================== end of the second section ========================= -->
-
-
-
-
-
-
 
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">

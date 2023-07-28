@@ -49,7 +49,7 @@
                     Learn more about my award-winning tactics <br> and experience!
                 </p>
                 <div class="buttons">
-                    <button class="btn"><a href="#contact">Get Started</a></button>
+                    <button class="btn"><a href="contact">Get Started</a></button>
                 </div>
             </div>
             <div class="image">
@@ -94,7 +94,7 @@
                                             class="w3-button w3-display-topright">&times;</span>
                                         <h5 style="padding: 3rem; text-align: justify;">
                                             <li>Coordinated with over 12+ influencer and commentary talent for
-                                                interviews and participation while live.</li>
+                                                interviews and participation while <center>live.</center></li>
                                             <li> Moderated Team Liquid Mobile discord server of 30,000 members.</li>
                                         </h5>
 
