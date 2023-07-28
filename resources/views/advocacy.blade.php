@@ -24,9 +24,9 @@
         <nav>
             <ul>
                 <li><a href="portfolio">Portfolio</a></li>
-                <li><a class="test" href="advocacy.html">Advocacy</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a class="test" href="advocacy">Advocacy</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
             <div class="bar">
                 <i class="open fa-solid fa-bars"></i>
@@ -48,27 +48,27 @@
                 <img src="{{ asset('images/1a.png') }}" style="width:100%;height: 30rem;" alt="Image">
                 <div class="text">
                     <div class="buttons">
-                        <button class="btn"><a href="#contact">Go to Site</a></button>
+                        <button class="btn"><a href="https://buytokenllc.com/">Go to Site</a></button>
                     </div>
                 </div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="./img/2b.png" style="width:100%;height: 30rem;">
+                <img src="{{ asset('images/2b.png') }}" style="width:100%;height: 30rem;">
                 <div class="text">
                     <div class="buttons">
-                        <button class="btn"><a href="#contact">Go to Site</a></button>
+                        <button class="btn"><a href="https://letsplott.com/">Go to Site</a></button>
                     </div>
                 </div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="./img/3c.png" style="width:100%;height: 30rem;">
+                <img src="{{ asset('images/3c.png') }}" style="width:100%;height: 30rem;">
                 <div class="text">
                     <div class="buttons">
-                        <button class="btn"><a href="#contact">Go to Site</a></button>
+                        <button class="btn"><a href="https://tribegaming.gg/">Go to Site</a></button>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
 
         <div class="card-container">
             <div class="card">
-                <img src="img/1.png" alt="Image 1" class="card-image">
+                <img src="{{ asset('images/1.png') }}" alt="Image 1" class="card-image">
                 <h3 class="card-title">Buying.com</h3>
                 <p class="card-definition">Administrative Assistant</p>
                 <button class="btn-read-more"><a>Read More</a></button>
@@ -139,7 +139,7 @@
 
             </div>
             <div class="card">
-                <img src="img/2.png" alt="Image 1" class="card-image">
+                <img src="{{ asset('images/2.png') }}" alt="Image 1" class="card-image">
                 <h3 class="card-title">LetsPlott</h3>
                 <p class="card-definition">Social Media Manager</p>
                 <button class="btn-read-more"><a>Read More</a></button>
@@ -148,7 +148,7 @@
                 <div class="card-modal-overlay">
                     <div class="card-modal-content">
                         <p class="card-definition-full">
-                            <img src="img/2.png" alt=""><br><br>
+                            <img src="{{ asset('images/2.png') }}" alt=""><br><br>
                             <small>• Managed a
                                 budget of $250,000 dollars in yearly ad spend on social media + e-commerce, which
                                 generated
@@ -163,7 +163,8 @@
                                 engagement increase by 50%, 35 million global
                                 impressions combined <br><br>
                                 • Front camera personality, hosted content series/pieces and sprouting new company
-                                culture
+                                culture<br><br>
+                                • Plott is a group of creatives, engineers, inventors, military veteran designers, weekend warriors, and DIYers. Plott is based out of New Jersey with their own factory in Kunshan, China. Through working with construction professionals and our own DIY experiences, Plott understands it’s not easy to change your surroundings. Taking all the necessary measurements for your designs, then applying those designs to your living space is a complicated and time-consuming process. Plott makes smart tools that bring the real world into a visual app. There, you can design with dimensional context, then use our tools to help you install with dimensional guidance—all without the need for calculations.
                             </small>
                         </p>
                         <button class="btn-close">Close</button>
@@ -173,7 +174,7 @@
 
             </div>
             <div class="card">
-                <img src="img/3.png" alt="Image 1" class="card-image">
+                <img src="{{ asset('images/3.png') }}" alt="Image 1" class="card-image">
                 <h3 class="card-title">TribeGaming</h3>
                 <p class="card-definition">Social Media Specialist</p>
                 <button class="btn-read-more"><a>Read More</a></button>
@@ -199,6 +200,9 @@
                                 @SirTagCR,
                                 @Godzly and more which led to
                                 accumulating over 500,000,000 views over TribeGaming network over a 6 months span
+                                • I took up a role at the most prestigious mobile gaming organizations assisting in social media and content creation and working alongside Cody Grey, collaborating with other peers to make some fantastic content for our fans to interact with, while also building Tribe Gaming’s brand voice and fulfilling objectives.<br><br>
+                                • Tribe Gaming is the largest mobile gaming esports organization in North America; point-blank. As the home of the biggest creators and best teams within mobile gaming, they have asserted themselves as the premier brand of the hottest-growing platform in gaming — mobile.<br><br>
+                                
                             </small>
                         </p>
                         <button class="btn-close">Close</button>
@@ -224,10 +228,10 @@
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">
         <ul>
-            <li><a href="./index.html">Portfolio</a></li>
-            <li><a href="./advocay.html">Advocacy</a></li>
-            <li><a href="./about.html">About Me</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./index">Portfolio</a></li>
+            <li><a href="./advocacy">Advocacy</a></li>
+            <li><a href="./about">About Me</a></li>
+            <li><a href="./contact">Contact</a></li>
         </ul>
         <hr>
 

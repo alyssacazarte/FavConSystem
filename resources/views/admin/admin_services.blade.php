@@ -1,6 +1,6 @@
 <body>
   <nav>
-    <a href="/">Home</a>
+    <a href="/admin">Home</a>
     <a href="/admin/services">Services</a>
     <a href="/admin/schedule">Schedule</a>
     <a href="/admin/requests">Request</a>

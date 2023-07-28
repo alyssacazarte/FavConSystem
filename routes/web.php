@@ -9,6 +9,8 @@ use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdvocacyController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AboutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +26,16 @@ Route::get('/', function () {
     return view('portfolio');
 });
 
+//Contact Route
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact/book', [ContactController::class, 'book'])->name('contact.book');
 Route::get('/thankyou', [ContactController::class, 'thankyou'])->name('contact.thankyou');
+
+//Request Route
 Route::post('/update/{req}', [RequestController::class, 'updateStatus'])->name('request.form');
 Route::get('/form', [RequestController::class, 'index'])->name('contact.form');
+
+//Schedule Route
 Route::get('/schedule', [ScheduleController::class, 'index']);
 Route::post('/schedule/update/{id}', [ScheduleController::class, 'update'])->name('schedule.update');
 Route::post('/schedule/create', [ScheduleController::class, 'create'])->name('schedule.create');
@@ -39,9 +46,14 @@ Route::get('/success', [ScheduleController::class, 'notification'])->name('sched
 Route::get('/portfolio', [PortfolioController::class, 'index']);
 //Advocacy Route
 Route::get('/advocacy', [AdvocacyController::class, 'index']);
+//About Route
+Route::get('/about', [AboutController::class, 'index']);
+
+//Contact Route
+
 
 // Admin routes==================================================================
-Route::get('/', [AdminController::class, 'admin']);
+Route::get('/admin', [AdminController::class, 'admin']);
 // services routes
 Route::get('/admin/services', [AdminController::class, 'services']);
 Route::get('/admin/services/create', [AdminController::class, 'createServices']);
