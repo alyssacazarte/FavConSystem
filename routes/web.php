@@ -63,7 +63,7 @@ Route::post('/admin/services/update/', [AdminController::class, 'updateServices'
 Route::get('/admin/services/delete', [AdminController::class, 'deleteServices']);
 Route::get('/admin/services/delete/{id}', [AdminController::class, 'deleteServices']);
 Route::get('/admin/services/view/{id}', [AdminController::class, 'specificServices']);
-Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
+// Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
 
 // schedule routes
 Route::get('/admin/schedule', [AdminController::class, 'schedule']);

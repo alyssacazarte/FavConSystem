@@ -18,7 +18,7 @@ class CreateTimeslotsTable extends Migration
             $table->string("start_time");
             $table->string("end_time");
             $table->string("status");
-            $table->unsignedBigInteger("schedule_id")->nullable();
+            $table->unsignedBigInteger('schedule_id');
         });
     }
 
