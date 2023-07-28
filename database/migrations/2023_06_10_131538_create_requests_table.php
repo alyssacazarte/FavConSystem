@@ -15,10 +15,9 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->time('start_time');
-            $table->time('end_time');
-            $table->string('status')->default('Pending');
+            $table->string("start_time");
+            $table->string("end_time");
+            $table->string("status")->default('Pending');
 
         });
     }

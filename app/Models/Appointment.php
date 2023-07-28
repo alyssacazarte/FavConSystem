@@ -8,10 +8,10 @@ use Illuminate\Notifications\Notifiable;
 
 class Appointment extends Model
 {
-    use Notifiable;
+    use HasFactory;
     // protected $table = 'appointments';
     public $timestamps = false;
-    
+
     protected $fillable = [
         'request_id',
         'service_id',
@@ -21,9 +21,10 @@ class Appointment extends Model
         'end_time',
         'email',
         'address',
-        'phone_no',
+        'phone_number',
         'notes',
     ];
+
     public function request(){
         return $this->belongsTo(Request::class);
     }
