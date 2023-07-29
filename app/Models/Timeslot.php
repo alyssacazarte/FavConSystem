@@ -20,4 +20,9 @@ class Timeslot extends Model
     ];
 
     
+
+    public function schedule(){
+        return $this->belongsTo(Schedule::class);
+    }
+
 }

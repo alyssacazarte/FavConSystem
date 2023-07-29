@@ -10,7 +10,9 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdvocacyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
+
 use App\Http\Controllers\AdminViewController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,16 +51,20 @@ Route::get('/advocacy', [AdvocacyController::class, 'index']);
 //About Route
 Route::get('/about', [AboutController::class, 'index']);
 
+
 //AdminView Route
 Route::get('/appointment-dashboard', [AdminViewController::class, 'appointmentview'])->name('admin.appointment');
 Route::get('/schedule-dashboard', [AdminViewController::class, 'scheduleview'])->name('admin.schedule');
 Route::get('service-dashboard', [AdminViewController::class, 'serviceview'])->name('admin.service');
 Route::get('/timeslot-dashboard', [AdminViewController::class, 'timeslotview'])->name('admin.timeslot');
 Route::get('/request-dashboard', [AdminViewController::class, 'requestview'])->name('admin.request');
+=======
+//Contact Route
+
 
 
 // Admin routes==================================================================
-Route::get('/', [AdminController::class, 'admin']);
+Route::get('/admin', [AdminController::class, 'admin']);
 // services routes
 Route::get('/admin/services', [AdminController::class, 'services']);
 Route::get('/admin/services/create', [AdminController::class, 'createServices']);
@@ -68,7 +74,11 @@ Route::post('/admin/services/update/', [AdminController::class, 'updateServices'
 Route::get('/admin/services/delete', [AdminController::class, 'deleteServices']);
 Route::get('/admin/services/delete/{id}', [AdminController::class, 'deleteServices']);
 Route::get('/admin/services/view/{id}', [AdminController::class, 'specificServices']);
+
 Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
+
+
+// Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
 
 
 // schedule routes
