@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Schedule;
 
 class AdminViewController extends Controller
 {
@@ -10,7 +11,8 @@ class AdminViewController extends Controller
         return view ('layout.admin.appointment');
     }
     public function scheduleview() {
-        return view ('layout.admin.schedule');
+        $schedules  = Schedule::all();
+        return view('layout.admin.schedule', compact('schedules'));
     }
     public function serviceview() {
         return view ('layout.admin.service');
