@@ -10,6 +10,8 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdvocacyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminViewController;
+
 
 use App\Http\Controllers\AdminViewController;
 

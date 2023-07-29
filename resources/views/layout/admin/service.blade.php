@@ -40,6 +40,21 @@
 
             </div>
             <div class="header-right">
+                <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img  src="{{ asset('images/favio.png') }}" alt="Profile"></span>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-item"><a href="">Go to site</a> 
+                    </div>
+
+                    <div class="dropdown-item"><a href="#">Change Pass</a> 
+                    </div>
+
+                    <div class="dropdown-item"><a href="logoutTest.html">Logout</a> 
+                    </div>
+                   
+                </div>
+            </div>
+
+
                 <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img
                         src="{{ asset('images/favio.png') }}" alt="Profile"></span>
                 <div class="dropdown-content" id="dropdownContent">
@@ -54,7 +69,6 @@
 
                 </div>
             </div>
-
 
 
         </header>
@@ -107,6 +121,25 @@
             <div class="main-title">
                 <p class="font-weight-bold">Service Table</p>
             </div>
+            <div class="charts">
+                <div class="charts-card">
+                    <p class="chart-title">Hello! <br><br> This for the Table of Service</p>
+                </div>
+
+            </div>
+
+           <div class="buttons">
+            <button>
+                Create
+            </button>
+            <button>
+                Update
+            </button>
+            <button>
+                Delete
+            </button>
+           </div>
+           
             <div class="charts"> 
                 <div class="charts-card">
                     <table class="Sertitles">
