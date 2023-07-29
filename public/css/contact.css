@@ -1279,7 +1279,7 @@ button {
     
     }
     
-    .contactBox .left form .genInfo, .subject, .remind, .message {
+    .contactBox .left .genInfo, .subject, .remind, .message {
         display: block;
         justify-items: center;
         

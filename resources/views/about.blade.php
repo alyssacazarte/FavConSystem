@@ -103,23 +103,68 @@
 
             <div class="column">
                 <div class="contact-icons">
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href=""><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-solid fa-mobile-screen"></i></a>
-                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/faviojasso/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/FavioJasso"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://twitter.com/FavioJasso"><i class="fa-brands fa-twitter"></i></a>
+                    <!-- Icon -->
+                    <a class="click-icon" id="myBtnM"><i class="fa-solid fa-mobile-screen"></i></a>
+                    <!-- <div class="icon" style="display: none;">
+                        <div class="modal-icon">
+                            <span class="close-icon">x</span>
+                            <div class="contact-info">
+                                <h2>973-234-2073</h2>
+                                <p>Contact Number</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- The Modal -->
+                    <div id="myModalm" class="modalM">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="closem">&times;</span>
+                                <h2>Contact Number </h2>
+                            </div>
+                            <div class="modal-bodym  ">
+                                <h4>973-234-2073</h4>
+                                <smal>Please contact this number for more information...</small>
+                            </div>
+                            <div class="modal-footer">
+                                <h3>Modal Footer</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="click-icon2" id="myBtnE"><i class="fa-solid fa-envelope"></i></a>
+
+
+                    <!-- The Modal -->
+                    <div id="myModale" class="modalE">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="closee ">&times;</span>
+                                <h2>My Email  </h2>
+                            </div>
+                            <div class="modal-bodye">
+                                <h4>example email</h4>
+                                <smal>Please contact this email for more information...</small>
+                            </div>
+                            <div class="modal-footer">
+                                <h3>Modal Footer</h3>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
     <!-- =================== end of the second section ========================= -->
-
-
-
-
-
-
 
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">

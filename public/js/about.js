@@ -31,6 +31,60 @@ ScrollOut({
 // ================ end for the header ==================
 
 
+// Get the modal
+var modalm = document.getElementById("myModalm");
+
+// Get the button that opens the modal
+var btnm = document.getElementById("myBtnM");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closem")[0];
+
+// When the user clicks the button, open the modal 
+btnm.onclick = function() {
+  modalm.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modalm.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalm) {
+    modalm.style.display = "none";
+  }
+}
+
+
+
+// Get the modal
+var modale = document.getElementById("myModale");
+
+// Get the button that opens the modal
+var btne = document.getElementById("myBtnE");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closee")[0];
+
+// When the user clicks the button, open the modal 
+btne.onclick = function() {
+  modale.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modale.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modale) {
+    modale.style.display = "none";
+  }
+}
+
 
 
 // ============== for the modal ====================
@@ -60,3 +114,41 @@ ScrollOut({
          modal.style.display = "none";
      }
  };
+
+const spanElementContact = document.querySelector('.click-icon');
+const icon = document.querySelector('.icon');
+const closeIcon = document.querySelector('.close-icon');
+
+spanElementContact.addEventListener('click', function () {
+  icon.style.display = 'block';
+});
+
+closeIcon.addEventListener('click', function () {
+  icon.style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === icon) {
+      icon.style.display = 'none';
+    }
+});
+const spanElementMail = document.querySelector('.click-icon2');
+const icon2 = document.querySelector('.icon2');
+const closeIcon2 = document.querySelector('.close-icon2');
+
+spanElementMail.addEventListener('click', function () {
+  icon2.style.display = 'block';
+});
+
+closeIcon2.addEventListener('click', function () {
+  icon2.style.display = 'none';
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === icon2) {
+      icon2.style.display = 'none';
+    }
+});
+
+
+

@@ -18,6 +18,7 @@ class Schedule extends Model
         // 'timeslot_id'
     ];
 
+
     public function scheduleTimes(){
         return $this->hasMany(ScheduleTime::class);
     }
@@ -29,5 +30,6 @@ class Schedule extends Model
     public function timeslot(){
         return $this->hasMany(Timeslot::class, 'schedule_id', 'id');
     }
+
 }
 

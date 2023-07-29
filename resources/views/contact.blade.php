@@ -48,7 +48,7 @@
             <p class="smd">To tell your business's story in the best and most <br> marketable way
                 possible while achieving your <br> marketing, branding, and advertising objectives. <br>
                 <a href="">
-                <img src="{{ asset('images/arrow-down.png') }}" alt="ArrowDown">
+                    <img src="{{ asset('images/arrow-down.png') }}" alt="ArrowDown">
                 </a>
             </p>
         </div>
@@ -63,22 +63,26 @@
 
 
     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-    <h2>Select Service</h2>
-    <div class="selectOption">
+    <form action="{{ route('contact.book') }}" method="POST">
+        @csrf
 
-        <p>Set up consulting Today!</p><br>
-        <center>
-            <div class="custom-select">
-                <select>
-                    <option value="0">Select Option:</option>
-                    <option value="1">Social Media Management / Marketing</option>
-                    <option value="2">Paid Social Ads</option>
-                    <option value="3">Graphic Design</option>
-                    <option value="4">Marketing / Branding Consulting</option>
-                </select>
-            </div>
-        </center>
-    </div>
+        <h2>Select Service</h2>
+        <div class="selectOption">
+
+            <p>Set up consulting Today!</p><br>
+            <center>
+                <div class="custom-select">
+                    <select name="service_id" id="service_id">
+                        @foreach ($services as $service)
+                        <option value="{{ $service->id }}">{{ $service->type }}</option> @endforeach
+                    </select>
+
+                </div>
+                <center>
+        </div>
+        </form>
+
+        
 
 
     <!-- /* ------------- end for the second section ------------------ */ -->
@@ -161,7 +165,7 @@
                     </div><br>
                     <div class="remind">
                         <h5>
-                            <img src="img/qmark.png">
+                            <img src="{{ asset('images/qmark.png') }}" alt="QuestionMark">
                             <small>
                                 Please share some details about your project.
                             </small>
@@ -192,6 +196,7 @@
     <hr class="hr"><br>
 
 
+ 
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">
         <ul>
@@ -203,6 +208,7 @@
         <hr>
 
     </div>
+
     <div class="footer">
 
         <div class="socialIcons">
@@ -217,15 +223,20 @@
         </div>
 
     </div>
+ 
 
     <div class="topBtn">
         <a href="#"><i class="fa-solid fa-angle-up"></i></a><br><br>
     </div>
+  
+  
 
 
-        <script src="{{ asset('js/scroll.js') }}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-        <script src="{{ asset('js/contact.js') }}"></script>
+    <script src="{{ asset('js/scroll.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="{{ asset('js/contact.js') }}"></script>
+   
 </body>
+
 
 </html>

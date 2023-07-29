@@ -14,7 +14,7 @@ class RequestController extends Controller
 
         return view("form", compact('requests'));
     }
-
+    
     public function updateStatus(Request $request, Requests $req)
     {
         $message = $request->all()["status"];
