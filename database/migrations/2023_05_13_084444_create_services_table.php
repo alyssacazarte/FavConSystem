@@ -18,7 +18,7 @@ class CreateServicesTable extends Migration
             $table->string("type");
             $table->string("description");
             $table->string("duration");
-            $table->unsignedBigInteger("timeslot_id")->nullable();
+            $table->unsignedBigInteger("schedule_id")->nullable();
             $table->string("status");
         });
     }
