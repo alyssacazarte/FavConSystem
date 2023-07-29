@@ -20,8 +20,12 @@ class Service extends Model
         'status'
     ];
 
+
+    
+
     public function schedule(){
         return $this->belongsTo(Schedule::class, 'schedule_id', 'id');
     }
+
 
 }

@@ -13,6 +13,8 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminViewController;
 
 
+use App\Http\Controllers\AdminViewController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,7 +79,7 @@ Route::get('/admin/services/view/{id}', [AdminController::class, 'specificServic
 
 Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
 
-=======
+
 // Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
 
 

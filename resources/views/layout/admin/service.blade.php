@@ -54,7 +54,22 @@
                 </div>
             </div>
 
-          
+
+                <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img
+                        src="{{ asset('images/favio.png') }}" alt="Profile"></span>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-item"><a href="">Go to site</a>
+                    </div>
+
+                    <div class="dropdown-item"><a href="#">Change Pass</a>
+                    </div>
+
+                    <div class="dropdown-item"><a href="logoutTest.html">Logout</a>
+                    </div>
+
+                </div>
+            </div>
+
 
         </header>
         <!-- End Header -->
@@ -125,6 +140,30 @@
             </button>
            </div>
            
+            <div class="charts"> 
+                <div class="charts-card">
+                    <table class="Sertitles">
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="buttons">
+                    <button>
+                        Create
+                    </button>
+                    <button>
+                        Update
+                    </button>
+                    <button>
+                        Delete
+                    </button>
+                </div>
+
         </main>
         <!-- End Main -->
 

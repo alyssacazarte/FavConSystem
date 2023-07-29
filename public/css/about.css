@@ -39,6 +39,7 @@ body {
     background: #F8AF5B;
     border-radius: 100vh;
 }
+
 /* ===== end of the scrollbar ===== */
 
 
@@ -54,7 +55,7 @@ body {
     background: #F8AF5B;
     z-index: 100;
     transition: 0.5s;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
 }
 
 .header[data-scroll="in"] {
@@ -84,18 +85,21 @@ nav .bar {
 
 nav a:hover {
     border-bottom: 3px solid #FF7C03;
-  }
-  
+}
+
 nav a.test {
     border-bottom: 3px solid #FF7C03;
-  }
-nav .bar .close{
+}
+
+nav .bar .close {
     display: none;
 }
-nav .bar.active .open{
+
+nav .bar.active .open {
     display: none;
 }
-nav .bar.active .close{
+
+nav .bar.active .close {
     display: initial;
 }
 
@@ -117,6 +121,7 @@ nav ul li a {
 nav ul li:hover a {
     color: #fff;
 }
+
 /* ===== end of the Header ===== */
 
 
@@ -130,29 +135,30 @@ nav ul li:hover a {
     background-size: cover;
     background-position: center;
     padding: 20px;
-  }
-  
-  .container h1, .container p {
+}
+
+.container h1,
+.container p {
     text-align: center;
     margin: 0;
-  }
+}
 
-  .container h1 {
+.container h1 {
     font-weight: bold;
     font-size: 3rem;
     text-shadow: 2px 2px #7d7c7c;
     color: #fff;
-  }
+}
 
-  .container h1 span {
+.container h1 span {
     color: #FF7C03;
-  }
+}
 
-  .container p {
+.container p {
     color: #000;
     font-size: 13px;
     font-weight: 700;
-  }
+}
 
 
 
@@ -164,29 +170,29 @@ nav ul li:hover a {
 .section {
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .column {
+}
+
+.column {
     flex: 1 0 33.33%;
     padding: 25px;
     box-sizing: border-box;
-  }
+}
 
-  .column p {
+.column p {
     justify-content: center;
     text-align: justify;
     color: #161313;
     font-size: 12px;
-  }
+}
 
-  .column h2{
+.column h2 {
     font-size: 16px;
     color: #FF7C03;
     font-weight: bold;
     padding-bottom: 10px;
-  }
+}
 
-  .btn {
+.btn {
     padding: 5px 10px;
     font-size: 12px;
     background: #ebc190;
@@ -194,19 +200,23 @@ nav ul li:hover a {
     cursor: pointer;
     transition: 0.3s;
 }
+
 .btn a {
     text-decoration: none;
-    color: #FF7C03 ;
+    color: #FF7C03;
     transition: 0.3s;
 }
+
 .btn:hover a {
     color: #fff;
 }
+
 .btn:hover {
     background: #FF7C03;
     transform: scale(1.1);
 }
-  /* ------------ for the modal --------------- */
+
+/* ------------ for the modal --------------- */
 
 
 /* Style the modal */
@@ -224,10 +234,20 @@ nav ul li:hover a {
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 50px;
+    padding: 20px;
     border: 1px solid #888;
     width: 80%;
 }
+
+.modal-content p {
+   font-size: 15px;
+   color: #FF7C03;
+   margin-top: -2rem;
+   padding-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
 .exit {
     padding-left: 40px;
     justify-content: center;
@@ -250,6 +270,7 @@ span.click-icon {
     cursor: pointer;
     font-size: small;
 }
+
 .icon {
     display: none;
     position: fixed;
@@ -262,10 +283,18 @@ span.click-icon {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
+
 .modal-icon {
     align-items: center;
     background-color: lightgrey;
     margin: 20% 50px 20% auto; 
+
+
+.modal-icon {
+    align-items: center;
+    background-color: lightgrey;
+    margin: 20% 50px 20% auto;
+
     padding: 15px;
     border: 1px solid #888;
     width: 80%;
@@ -274,6 +303,7 @@ span.click-icon {
     border-radius: 20px;
     /* -webkit-text-stroke-width: medium; */
 }
+
 .close-icon {
     color: #888;
     float: right;
@@ -284,7 +314,9 @@ span.click-icon {
 
 .contact-info h2 {
     color: #FF7C03;
+
     font-size: 15px; 
+    font-size: 15px;
     margin-bottom: 3px;
     padding-bottom: 0;
 }
@@ -294,11 +326,18 @@ span.click-icon {
     text-align: center; 
     color: #ebc190;
 }
+
+    text-align: center;
+    color: #ebc190;
+}
+
+
 span.click-icon2 {
     color: #FF7C03;
     cursor: pointer;
     font-size: small;
 }
+
 .icon2 {
     display: none;
     position: fixed;
@@ -311,10 +350,16 @@ span.click-icon2 {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
+
 .modal-icon2 {
     align-items: center;
     background-color: lightgrey;
     margin: 20% 10px 20% auto; 
+
+.modal-icon2 {
+    align-items: center;
+    background-color: lightgrey;
+    margin: 20% 10px 20% auto;
     padding: 15px;
     border: 1px solid #888;
     width: 80%;
@@ -334,6 +379,7 @@ span.click-icon2 {
 .contact-info2 h2 {
     color: #FF7C03;
     font-size: 15px; 
+    font-size: 15px;
     margin-bottom: 3px;
     padding-bottom: 0;
 }
@@ -341,6 +387,7 @@ span.click-icon2 {
 .contact-info2 p {
     font-size: 10px;
     text-align: center; 
+    text-align: center;
     color: #ebc190;
 }
 
@@ -361,7 +408,7 @@ span.click-icon2 {
 
 /* --------------- for the second column --------------- */
 .column img {
-    
+
     --s: 15px;
     /* size of the frame */
     --b: 2px;
@@ -389,16 +436,16 @@ img:hover {
     outline-offset: calc(var(--s)/-2);
     --_i: calc(100% - 2*var(--s));
 }
-  
+
 /* ---------------- for the column 3 ----------------- */
 
 .column .contact-icons {
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
-  }
-  
-  .contact-icons a {
+}
+
+.contact-icons a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: inline-block;
     width: 50px;
@@ -408,62 +455,118 @@ img:hover {
     text-align: center;
     line-height: 50px;
     transition: background-color 0.3s ease;
-  }
-  
-  .contact-icons a:hover {
+}
+
+.contact-icons a:hover {
     background-color: #ccc;
-  }
-  
-  .contact-icons i {
+}
+
+.contact-icons i {
     color: #000;
     font-size: 20px;
-  }
-  .contact-icons i:hover {
+}
+
+.contact-icons i:hover {
     color: #FF7C03;
     font-size: 20px;
-  }
-  a i {
+}
+
+a i {
     transition: all 0.3s linear;
     height: auto;
-  }
-  
-  a:hover i {
+}
+
+a:hover i {
     transform: scale(1.5);
-  }
-  
+}
 
 
-  @media screen and (max-width: 768px) {
+
+@media screen and (max-width: 768px) {
     .column {
-      flex: 1 0 100%;
+        flex: 1 0 100%;
 
     }
+
     .modal-content {
         margin-top: 50%;
     }
+
     .exit {
         font-size: 20px;
         padding: 0px;
     }
-    .column h2{
+
+    .column h2 {
         font-size: 15px;
         padding-bottom: 0px;
-      }
+    }
 
-      .column img {
+    .column img {
         width: 250px;
-      }
-      #test {
+    }
+
+    #test {
         margin-left: 20px;
-      }
+    }
 
-      .column .contact-icons {
-       
+    .column .contact-icons {
+
         margin-top: 0px;
-      }
+    }
+
+    /* 
+    .icon .modal-icon  {
+        border: none;
+        background: #ffff;
+        font-size: 20px;
+        color: black;
+        margin-left: 18.5rem;
+        padding: 20px;
+        margin-top: 18rem;
 
 
-  }
+    }
+
+    .icon .modal-icon .contact-info {
+        background: transparent;
+        height: auto;
+    }
+
+    .icon .modal-icon h2 {
+        color: #FF7C03;
+        padding: 10px;
+    }
+    .icon .modal-icon p{
+        padding-bottom: 10px;
+    }
+
+
+    .icon2 .modal-icon2  {
+        border: none;
+        background: #ffff;
+        font-size: 20px;
+        color: black;
+        margin-left: 18.5rem;
+        padding: 20px;
+        margin-top: 18rem;
+
+
+    }
+
+    .icon2 .modal-icon2 .contact-info2 {
+        background: transparent;
+        height: auto;
+    }
+
+    .icon2 .modal-icon2 h2 {
+        color: #FF7C03;
+        padding: 10px;
+    }
+    .icon2 .modal-icon2 p{
+        padding-bottom: 10px;
+    } */
+}
 
 
 
@@ -479,9 +582,9 @@ img:hover {
 
 
 
-  /* =========== for the footer and responsive =============================== */
+/* =========== for the footer and responsive =============================== */
 
-  #f-footer {
+#f-footer {
 
     background: #121212;
     /* padding: 1px; */
@@ -516,19 +619,21 @@ img:hover {
 }
 
 
- #f-footer ul li:hover a {
+#f-footer ul li:hover a {
     color: white
-} 
-.f-footer hr {
-border: none; 
-  height:  2px; 
-  background-color: #F8AF5B; 
-  margin-left: -20px;
-  padding-right: -40rem;
-  margin-left: 40px; 
-  margin-right: 40px; 
-  margin-top: -20px;
 }
+
+.f-footer hr {
+    border: none;
+    height: 2px;
+    background-color: #F8AF5B;
+    margin-left: -20px;
+    padding-right: -40rem;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: -20px;
+}
+
 .footer {
     background-color: #413E3E;
     display: flex;
@@ -537,20 +642,23 @@ border: none;
     align-items: center;
     box-shadow: 0 -1px 2px rgba(255, 255, 255, 0.2);
 }
-.footer h6{
+
+.footer h6 {
     padding-left: 10px;
     color: #FF7C03;
     margin-bottom: -8px;
 }
+
 .footer .socialIcons a i {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 20px;
     margin: 0 10px;
-    color:black;
+    color: black;
     transition: 0.5s;
     cursor: pointer;
 }
+
 .copy {
     font-size: 10px;
     color: #000;
@@ -579,13 +687,14 @@ border: none;
     font-size: 35px;
     color: #FF7C03;
     text-decoration: none;
-    
+
 }
 
 @media (max-width:1024px) {
     .header {
         padding: 40px 25px;
     }
+
     .header[data-scroll="in"] {
         padding: 10px 25px;
     }
@@ -598,8 +707,8 @@ border: none;
 }
 
 @media (max-width:768px) {
-    
-    nav ul{
+
+    nav ul {
         opacity: 0;
         pointer-events: none;
         flex-direction: column;
@@ -610,18 +719,21 @@ border: none;
         border-radius: 5px;
         padding: 30px 40px 10px;
         background: #F8AF5B;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
         transition: 0.5s;
 
     }
-    nav ul.active{
+
+    nav ul.active {
         opacity: 1;
         pointer-events: all;
     }
-    nav ul li{
+
+    nav ul li {
         margin: 8px 0;
     }
-    nav .bar{
+
+    nav .bar {
         display: initial;
         right: 56;
     }
@@ -631,6 +743,7 @@ border: none;
         height: 35px;
         right: 35px;
     }
+
     .topBtn i {
         font-size: 20px;
     }
@@ -640,15 +753,19 @@ border: none;
     .header {
         padding: 25px 50px;
     }
+
     .header[data-scroll="in"] {
         padding: 10px 50px;
     }
+
     .logo {
         font-size: 35px;
     }
+
     nav .bar {
         right: 35px;
     }
+
     nav ul {
         flex-direction: column;
         position: absolute;
@@ -659,63 +776,74 @@ border: none;
         padding: 30px 40px 10px;
         background: #F8AF5B;
     }
+
     .footer {
-        padding: 10px 20px;;
+        padding: 10px 20px;
+        ;
     }
+
     .footer .socialIcons a i {
         font-size: 25px;
         margin: 0 7px;
     }
-    .footer .copy{
+
+    .footer .copy {
         font-size: 12px;
     }
-    .topBtn{
+
+    .topBtn {
         bottom: 55px;
     }
+
     .container {
         margin-top: 110px;
-       
-      }
 
-      .container h1, .container p {
+    }
+
+    .container h1,
+    .container p {
         text-align: center;
         margin: 0;
         padding: 0;
-      }
-    
-      .container h1 {
+    }
+
+    .container h1 {
         font-weight: bold;
         font-size: 2rem;
         text-shadow: 1px 1px #7d7c7c;
-      }
+    }
 
-      .container p {
+    .container p {
         font-weight: bold;
         font-size: 12px;
-      }
-      
-   
+    }
+
+
 }
 
 @media (max-width:425px) {
     nav ul li a {
         font-size: 14px;
     }
+
     nav .bar {
         right: 30px;
-    }    
+    }
 
     .footer .socialIcons a i {
         font-size: 12px;
         margin: 0px 5px;
     }
+
     .title span {
         font-size: 22px;
     }
+
     .title:before {
         width: 240px;
         top: 42%;
     }
+
     .header .logo img {
         width: 70px;
         padding: 0;
@@ -724,6 +852,7 @@ border: none;
     #f-footer ul li {
         padding: 0;
     }
+
     .container {
         margin-top: 100px;
       }
@@ -731,3 +860,265 @@ border: none;
       
    
 }
+
+    }
+
+
+
+}
+
+/* The Modal (background) */
+.modalM {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-contentm {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 90%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    margin: 70px;
+
+}
+
+/* The Close Button */
+.closem {
+    color: #FF7C03;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closem:hover,
+.closem:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #F8AF5B;
+    color: white;
+}
+
+.modal-bodym {
+    text-align: center;
+    padding: 2px 16px;
+    color: #000;
+}
+
+.modal-bodym h4 {
+    color: #FF7C03;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #fff;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
+
+/* The Modal (background) */
+.modalE {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-contente {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 90%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    margin: 70px;
+
+}
+
+/* The Close Button */
+.closee {
+    color: #FF7C03;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closee:hover,
+.closee:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #F8AF5B;
+    color: white;
+}
+
+.modal-bodye {
+    text-align: center;
+    padding: 2px 16px;
+    color: #000;
+}
+
+.modal-body h4 {
+    color: #FF7C03;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #fff;
+    color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+
