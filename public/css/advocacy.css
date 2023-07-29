@@ -422,6 +422,7 @@ nav ul li:hover a {
     text-align: center;
 }
 
+
 .btn-close {
     font-size: 10px;
     position: absolute;
@@ -455,7 +456,7 @@ nav ul li:hover a {
 
 .card-definition-full small {
     color: #FF7C03;
-    font-size: 11px;
+    font-size: 14px;
     padding-left: 1rem;
     justify-content: center;
     padding-top: 3rem;

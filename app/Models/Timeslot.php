@@ -18,4 +18,6 @@ class Timeslot extends Model
         'status',
         'schedule_id'
     ];
+
+    
 }

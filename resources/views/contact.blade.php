@@ -74,7 +74,7 @@
                 <div class="custom-select">
                     <select name="service_id" id="service_id">
                         @foreach ($services as $service)
-                        <option value="{{ $service->id }}">{{ $service->service_type }}</option> @endforeach
+                        <option value="{{ $service->id }}">{{ $service->type }}</option> @endforeach
                     </select>
 
                 </div>

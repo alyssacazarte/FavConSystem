@@ -177,8 +177,11 @@ body {
     grid-area: main;
     overflow-y: auto;
     padding: 20px 20px;
+    
    
   }
+
+
   
   .main-title {
     align-items: center;
@@ -193,8 +196,23 @@ body {
   }
   
   
-  
-  .charts-card {
+  .charts-card .Sertitles {
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 1px solid black; */
+  }
+
+  .charts-card .Sertitles th {
+    /* border: 1px solid black; */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  .charts-card  {
+   
     background-color: #ffffff;
     margin-bottom: 10px;
     padding: 25px;
@@ -203,9 +221,12 @@ body {
     border: 1px solid #d2d2d3;
     border-radius: 5px;
     box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
-    height: 200px;
+    height: auto;
+    /* color: red; */
   }
   
+
+
   .chart-title {
     /* display: flex; */
     /* align-items: center; */

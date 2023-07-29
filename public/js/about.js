@@ -31,6 +31,60 @@ ScrollOut({
 // ================ end for the header ==================
 
 
+// Get the modal
+var modalm = document.getElementById("myModalm");
+
+// Get the button that opens the modal
+var btnm = document.getElementById("myBtnM");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closem")[0];
+
+// When the user clicks the button, open the modal 
+btnm.onclick = function() {
+  modalm.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modalm.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalm) {
+    modalm.style.display = "none";
+  }
+}
+
+
+
+// Get the modal
+var modale = document.getElementById("myModale");
+
+// Get the button that opens the modal
+var btne = document.getElementById("myBtnE");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("closee")[0];
+
+// When the user clicks the button, open the modal 
+btne.onclick = function() {
+  modale.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modale.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modale) {
+    modale.style.display = "none";
+  }
+}
+
 
 
 // ============== for the modal ====================
@@ -95,3 +149,6 @@ window.addEventListener('click', function (event) {
       icon2.style.display = 'none';
     }
 });
+
+
+

@@ -20,9 +20,8 @@ class ContactController extends Controller
     public function index()
     {
         $services = Service::all();
-        $schedules = Schedule::with('scheduleTimes')->get();
 
-        return view('contact', compact('services', 'schedules'));
+        return view('contact', compact('services'));
     }
 
     public function book(BookingRequest $request)
