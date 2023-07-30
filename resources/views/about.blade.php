@@ -107,6 +107,9 @@
                     <a href="https://github.com/FavioJasso"><i class="fa-brands fa-github"></i></a>
                     <a href="https://twitter.com/FavioJasso"><i class="fa-brands fa-twitter"></i></a>
                     <!-- Icon -->
+
+                    <a class="click-icon"><i class="fa-solid fa-mobile-screen"></i></a>
+                    <div class="icon" style="display: none;">
                     <a class="click-icon" id="myBtnM"><i class="fa-solid fa-mobile-screen"></i></a>
                     <!-- <div class="icon" style="display: none;">
                         <div class="modal-icon">
@@ -116,6 +119,18 @@
                                 <p>Contact Number</p>
                             </div>
                         </div>
+
+                    </div>
+                    <a class="click-icon2"><i class="fa-solid fa-envelope"></i></a>
+                    <div class="icon2" style="display: none;">
+                        <div class="modal-icon2">
+                            <span class="close-icon2">x</span>
+                            <div class="contact-info2">
+                                <h2>fjporras04@gmail.com</h2>
+                                <p>Email Address</p>
+                            </div>
+                        </div>
+
                     </div> -->
 
                     <!-- The Modal -->

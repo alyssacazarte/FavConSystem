@@ -231,7 +231,6 @@ nav ul li:hover a {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -239,6 +238,7 @@ nav ul li:hover a {
     border: 1px solid #888;
     width: 80%;
 }
+
 .modal-content p {
    font-size: 15px;
    color: #FF7C03;
@@ -287,7 +287,14 @@ span.click-icon {
 .modal-icon {
     align-items: center;
     background-color: lightgrey;
+    margin: 20% 50px 20% auto; 
+
+
+.modal-icon {
+    align-items: center;
+    background-color: lightgrey;
     margin: 20% 50px 20% auto;
+
     padding: 15px;
     border: 1px solid #888;
     width: 80%;
@@ -307,6 +314,8 @@ span.click-icon {
 
 .contact-info h2 {
     color: #FF7C03;
+
+    font-size: 15px; 
     font-size: 15px;
     margin-bottom: 3px;
     padding-bottom: 0;
@@ -314,9 +323,14 @@ span.click-icon {
 
 .contact-info p {
     font-size: 10px;
+    text-align: center; 
+    color: #ebc190;
+}
+
     text-align: center;
     color: #ebc190;
 }
+
 
 span.click-icon2 {
     color: #FF7C03;
@@ -340,6 +354,11 @@ span.click-icon2 {
 .modal-icon2 {
     align-items: center;
     background-color: lightgrey;
+    margin: 20% 10px 20% auto; 
+
+.modal-icon2 {
+    align-items: center;
+    background-color: lightgrey;
     margin: 20% 10px 20% auto;
     padding: 15px;
     border: 1px solid #888;
@@ -349,7 +368,6 @@ span.click-icon2 {
     border-radius: 20px;
     /* -webkit-text-stroke-width: medium; */
 }
-
 .close-icon2 {
     color: #888;
     float: right;
@@ -360,6 +378,7 @@ span.click-icon2 {
 
 .contact-info2 h2 {
     color: #FF7C03;
+    font-size: 15px; 
     font-size: 15px;
     margin-bottom: 3px;
     padding-bottom: 0;
@@ -367,6 +386,7 @@ span.click-icon2 {
 
 .contact-info2 p {
     font-size: 10px;
+    text-align: center; 
     text-align: center;
     color: #ebc190;
 }
@@ -835,6 +855,12 @@ a:hover i {
 
     .container {
         margin-top: 100px;
+      }
+      
+      
+   
+}
+
     }
 
 

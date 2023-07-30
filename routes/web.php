@@ -10,7 +10,6 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdvocacyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
-
 use App\Http\Controllers\AdminViewController;
 
 /*
@@ -55,10 +54,9 @@ Route::get('/about', [AboutController::class, 'index']);
 //AdminView Route
 Route::get('/appointment-dashboard', [AdminViewController::class, 'appointmentview'])->name('admin.appointment');
 Route::get('/schedule-dashboard', [AdminViewController::class, 'scheduleview'])->name('admin.schedule');
-Route::get('service-dashboard', [AdminViewController::class, 'serviceview'])->name('admin.service');
+Route::get('/service-dashboard', [AdminViewController::class, 'serviceview'])->name('admin.service');
 Route::get('/timeslot-dashboard', [AdminViewController::class, 'timeslotview'])->name('admin.timeslot');
 Route::get('/request-dashboard', [AdminViewController::class, 'requestview'])->name('admin.request');
-
 //Contact Route
 
 
@@ -97,3 +95,7 @@ Route::post('/admin/requests/', [AdminController::class, 'editSettingsRequests']
 
 //requests appointments
 Route::get('/admin/appointments', [AdminController::class, 'appointments']);
+
+
+
+Route::post('/get-schedule', [ContactController::class, 'getSchedule'])->name('get.schedule');

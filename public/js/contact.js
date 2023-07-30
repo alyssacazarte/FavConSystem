@@ -6,6 +6,7 @@ let btn = document.querySelector('.topBtn i')
 let contactBtn = document.querySelector('.container')
 let btn2 = document.querySelector('.container a')
 let nav = document.querySelector('nav ul')
+let selectedItems = {};
 
 bar.addEventListener('click', () => {
     bar.classList.toggle('active')
@@ -30,15 +31,11 @@ ScrollOut({
 // ================ end for the header ==================
 
 
+// ================ selecting service ===================
 
-
-
-
-
-
-
-
-
+document.addEventListener("change", document.getElementById('service_id'), () => {
+    console.log('change')
+});
 
 // ================== for the select servicies ==========================
 
@@ -62,6 +59,7 @@ for (i = 0; i < l; i++) {
         create a new DIV that will act as an option item:*/
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
+        console.log(selElmnt.options[j].value);
         c.addEventListener("click", function (e) {
             /*when an item is clicked, update the original select box,
             and the selected item:*/
@@ -71,6 +69,9 @@ for (i = 0; i < l; i++) {
             h = this.parentNode.previousSibling;
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
+                    let value = s.options[i].value
+                    selectedItems['service_id'] = value
+                    sendRequest(value);
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
                     y = this.parentNode.getElementsByClassName("same-as-selected");
@@ -126,100 +127,174 @@ document.addEventListener("click", closeAllSelect);
 
 // ================== for the calendar and time ==================
 
-const date = new Date();
+let date = new Date();
+let arr = [];
 
 const renderCalendar = () => {
-  date.setDate(1);
-
-  const monthDays = document.querySelector(".days");
-
-  const lastDay = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
-
-  const prevLastDay = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    0
-  ).getDate();
-
-  const firstDayIndex = date.getDay();
-
-  const lastDayIndex = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDay();
-
-  const nextDays = 7 - lastDayIndex - 1;
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
-
-  document.querySelector(".date p").innerHTML = new Date().toDateString();
-
-  let days = "";
-
-  for (let x = firstDayIndex; x > 0; x--) {
-    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
-  }
-
-  for (let i = 1; i <= lastDay; i++) {
-    if (
-      i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
-    ) {
-      days += `<div onClick="set(this)" class="today">${i}</div>`;
-    } else {
-      days += `<div onClick="set(this)">${i}</div>`;
+    if (arr.length > 0) {
+        date = arr[0].date;
     }
-  }
 
-  for (let j = 1; j <= nextDays; j++) {
-    days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
-  }
+    date.setDate(1);
+
+    const monthDays = document.querySelector(".days");
+
+    const lastDay = new Date(
+        date.getFullYear(),
+        date.getMonth() + 1,
+        0
+    ).getDate();
+
+    const prevLastDay = new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        0
+    ).getDate();
+
+    const firstDayIndex = date.getDay();
+
+    const lastDayIndex = new Date(
+        date.getFullYear(),
+        date.getMonth() + 1,
+        0
+    ).getDay();
+
+    const nextDays = 7 - lastDayIndex - 1;
+
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+
+    document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+
+    document.querySelector(".date p").innerHTML = new Date().toDateString();
+
+    let days = "";
+
+    for (let x = firstDayIndex; x > 0; x--) {
+        days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+    }
+
+    for (let i = 1; i <= lastDay; i++) {
+        let cl = 'none-active';
+        let attr = '';
+
+        if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
+            days += `<div class="${cl} today">${i}</div>`;
+        }
+        else {
+            if (arr.length > 0) {
+                let mon = date.getMonth() + 1;
+                arr.forEach(r => {
+                    if (r.day == i && mon == r.month) {
+                        cl = 'can-click'
+                        attr = `onClick="set(this)" data-id="${r.id}"`;
+                    }
+                })
+            } days += `<div ${attr} class="${cl}">${i}</div>`;
+        }
+    }
+
+    for (let j = 1; j <= nextDays; j++) {
+        days += `<div class="next-date">${j}</div>`;
+        monthDays.innerHTML = days;
+    }
 };
 
 document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
+    date.setMonth(date.getMonth() - 1);
+    renderCalendar();
 });
 
 document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
+    date.setMonth(date.getMonth() + 1);
+    renderCalendar();
 });
 
 function set(e) {
-  let element = document.getElementsByClassName('actives')
-  if (element.length > 0) {
-    const boxes = document.getElementsByTagName("div");
-    console.log(boxes)
-    for(box of boxes) {
-      console.log(box.classList.remove('actives'))
+    let element = document.getElementsByClassName('actives')
+    if (element.length > 0) {
+        const boxes = document.getElementsByTagName("div");
+        for (box of boxes) {
+            console.log(box.classList.remove('actives'))
+        }
     }
-    // boxes.classList.remove("active");
+    e.setAttribute('class', 'actives')
+    let day = e.innerHTML;
+    let m = date.getMonth() + 1;
 
-  }
-  console.log(e.setAttribute('class', 'actives'))
+    selectedItems['schedule_id'] = e.getAttribute('data-id');
 
-  // add class 
+    arr.forEach(r => {
+        if (r.day == day && r.month == m) {
+            document.querySelector('.shadow').innerHTML = ''
+            r.timeslot.forEach(time => {
+                document.querySelector('.shadow').innerHTML += `<button onClick="clicked(this)" class='focus' data-id="${time.id}">${time.start_time}</button>`;
+            })
+        }
+    });
+
+    console.log(selectedItems);
 }
+
 renderCalendar();
+
+// Sending request to database
+async function sendRequest(id) {
+    let form = document.getElementById('get-service');
+    form.childNodes[3].value = id;
+
+    let origin = window.location.origin;
+    let url = origin + '/get-schedule'
+
+    await fetch(url, {
+        method: 'POST',
+        credentials: "same-origin",
+        body: new FormData(document.getElementById('get-service'))
+    })
+        .then((res) => res.json())
+        .then(res => {
+            arr = res.map(r => {
+                return {
+                    'id': r.id,
+                    'month': new Date(r.date).getMonth() + 1,
+                    'day': new Date(r.date).getDate(),
+                    'date': new Date(r.date),
+                    'timeslot': r.timeslot
+                };
+            });
+
+            renderCalendar();
+        })
+}
+
+function clicked(e) {
+    let id = e.getAttribute('data-id')
+    selectedItems['timeslot_id'] = id
+}
+
+
+function bookNow() {
+    document.querySelector('#service').value = selectedItems['service_id'];
+    document.querySelector('#schedule').value = selectedItems['schedule_id'];
+    document.querySelector('#timeslot').value = selectedItems['timeslot_id'];
+    document.querySelector('#name').value = document.querySelector('#submit-name').value;
+    document.querySelector('#email').value = document.querySelector('#submit-email').value;
+    document.querySelector('#address').value = document.querySelector('#submit-address').value;
+    document.querySelector('#phone_no').value = document.querySelector('#submit-phone-no').value;
+    document.querySelector('#notes').value = document.querySelector('#submit-note').value;
+
+    document.getElementById('final-request').submit();
+    // console.log(document.getElementById('final-request'));
+}

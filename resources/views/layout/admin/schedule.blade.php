@@ -111,42 +111,25 @@
                 <button>
                     Create
                 </button>
-                <div class="charts">
-                    <div class="charts-card">
-                        <p class="chart-title">
-                        <div class="row">
-                            <div class="column">
-                                <h2>date</h2>
-                                <p>Some text..</p>
-                            </div>
-                            <div class="column">
-                                <h2>start_time</h2>
-                                <p>Some text..</p>
-                            </div>
-                            <div class="column">
-                                <h2>end_time</h2>
-                                <p>Some text..</p>
-                            </div>
-                            <div class="column" id="action">
-                                <h2>action</h2>
-
-                                <button>
-                                    Update
-                                </button>
-                                <button>
-                                    Update
-                                </button>
-                                <button>
-                                    Update
-                                </button>
-                                <button>
-                                    Update
-                                </button>
-                                <button>
-                                    Update
-                                </button>
-                            </div>
-                        </div>
+                <div >
+                    <div>
+                        <p >
+                                <table class="charts">
+    <tr  class="charts-card">
+      <th class="chart-title">Date</th>
+      <th class="chart-title">Status</th>
+      <th class="chart-title">Actions</th>
+    </tr>
+    @foreach ($schedules as $schedules)
+    <tr  class="charts-card">
+      <td>{{ $schedules->date}}</td>
+      <td>{{ $schedules->status}}</td>
+      <td>
+        <a href=" {{ url('/admin/schedule/update/'. $schedules->id) }}" >Update</a>
+      </td>
+    </tr>
+    @endforeach
+  </table>
                     </div>
 
                 </div>

@@ -17,7 +17,7 @@ class CreateSchedulesTable extends Migration
             $table->id();
             $table->string("date");
             $table->string("status");
-            // $table->unsignedBigInteger("timeslot_id")->nullable();
+            $table->unsignedBigInteger("service_id")->nullable();
         });
     }
 

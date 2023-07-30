@@ -8,7 +8,7 @@ use App\Models\Schedule;
 use App\Models\Request as Requests;
 use App\Models\Appointment;
 use App\Http\Requests\BookingRequest;
-
+use Session;
 
 class ContactController extends Controller
 {
@@ -19,20 +19,23 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
+        $services = Service::where('status', 'Active')->whereHas('schedule')->get();
 
         return view('contact', compact('services'
     ));
     }
 
-    public function book(BookingRequest $request)
+    public function book(Request $request)
+    // public function book(BookingRequest $request)
     {
-        $req = Requests::create($request->validated());
-        $req->appointment()->create($request->validated());
+        $data = $request->all();
+        $req = Appointment::create($data);
+        // $req = Requests::create($request->validated());
+        // $req->appointment()->create($request->validated());
 
         if ($req) {
             return redirect()->route('contact.thankyou');
-        } 
+        }
 
         return redirect()->route('contact.index');
     }
@@ -42,6 +45,14 @@ class ContactController extends Controller
         return view('thankyou');
     }
 
-   
-   
+    public function getSchedule(Request $request)
+    {
+        $data = $request->all();
+
+        $schedule = Schedule::where('service_id', $data['schedule_id'])->with('timeslot')->get();
+
+        return response()->json($schedule);
+    }
+
+
 }
