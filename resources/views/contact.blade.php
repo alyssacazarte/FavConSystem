@@ -9,7 +9,6 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
-
     <title>Contact</title>
 </head>
 
@@ -74,19 +73,18 @@
                 <div class="custom-select">
                     <select name="service_id" id="service_id">
                         @foreach ($services as $service)
+                            <option value="{{ $service->id }}">{{ $service->service_type }}</option>
 
-                        <option value="{{ $service->id }}">{{ $service->service_type }}</option> @endforeach
-
-                        <option value="{{ $service->id }}">{{ $service->type }}</option> @endforeach
-
+                            <option value="{{ $service->id }}">{{ $service->type }}</option>
+                        @endforeach
                     </select>
-
                 </div>
+
                 <center>
         </div>
-        </form>
+    </form>
 
-        
+
 
 
     <!-- /* ------------- end for the second section ------------------ */ -->
@@ -126,15 +124,7 @@
             </div>
             <div class="test"></div>
             <div class="shadow">
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class="focus">07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
+
             </div>
 
             <div class="standardTime">
@@ -160,12 +150,12 @@
                 <form action="submit">
                     <br><br>
                     <div class="genInfo">
-                        <input type="text" placeholder="Name" class="name">
-                        <input type="email" placeholder="Email" class="email">
+                        <input type="text" placeholder="Name" class="name" id="submit-name" required>
+                        <input type="email" placeholder="Email" class="email" id="submit-email" required>
                     </div>
                     <div class="subject">
-                        <input type="text" placeholder="Subject">
-                        <input type="text" placeholder="Subject">
+                        <input type="text" placeholder="Address" id="submit-address" required>
+                        <input type="text" placeholder="Phone Number" id="submit-phone-no" required>
                     </div><br>
                     <div class="remind">
                         <h5>
@@ -178,7 +168,7 @@
                         <!-- <input type="text"  placeholder="Please share some details about your project."> -->
                     </div>
                     <div class="message">
-                        <textarea name="message" rows="5" placeholder="Notes (optional)" required></textarea>
+                        <textarea name="message" rows="5" placeholder="Notes (optional)" id="submit-note"></textarea>
                     </div>
 
                 </form>
@@ -193,14 +183,14 @@
                 By clicking below you agree to these <span>Privacy Policies</span>
             </small>
             <div>
-                <button class="btnBook"> Book Now </button>
+                <button class="btnBook" onclick="bookNow()"> Book Now </button>
             </div>
         </div>
     </div>
     <hr class="hr"><br>
 
 
- 
+
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">
         <ul>
@@ -227,19 +217,33 @@
         </div>
 
     </div>
- 
+
 
     <div class="topBtn">
         <a href="#"><i class="fa-solid fa-angle-up"></i></a><br><br>
     </div>
-  
-  
 
+    <form action="{{ route('get.schedule') }}" method="POST" id="get-service">
+        @csrf
+        <input type="hidden" name="schedule_id" value="#">
+    </form>
+
+    <form action="{{ route('contact.book') }}" method="POST" id="final-request">
+        @csrf
+        <input type="hidden" name="service_id" id="service">
+        <input type="hidden" name="schedule_id" id="schedule">
+        <input type="hidden" name="timeslot_id" id="timeslot">
+        <input type="hidden" name="name" id="name">
+        <input type="hidden" name="email" id="email">
+        <input type="hidden" name="address" id="address">
+        <input type="hidden" name="phone_no" id="phone_no">
+        <input type="hidden" name="notes" id="notes">
+    </form>
 
     <script src="{{ asset('js/scroll.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="{{ asset('js/contact.js') }}"></script>
-   
+
 </body>
 
 

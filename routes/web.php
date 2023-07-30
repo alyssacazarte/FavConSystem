@@ -95,3 +95,7 @@ Route::post('/admin/requests/', [AdminController::class, 'editSettingsRequests']
 
 //requests appointments
 Route::get('/admin/appointments', [AdminController::class, 'appointments']);
+
+
+
+Route::post('/get-schedule', [ContactController::class, 'getSchedule'])->name('get.schedule');

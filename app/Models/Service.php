@@ -16,16 +16,20 @@ class Service extends Model
         'type',
         'description',
         'duration',
-        'schedule_id',
+        // 'schedule_id',
         'status'
     ];
 
 
-    
-
-    public function schedule(){
-        return $this->belongsTo(Schedule::class, 'schedule_id', 'id');
+    public function schedule()
+    {
+        // return $this->hasMany(Schedule::class, 'id', 'schedule_id');
+        return $this->hasMany(Schedule::class);
     }
+
+    // public function schedule(){
+    //     return $this->belongsTo(Schedule::class, 'schedule_id', 'id');
+    // }
 
 
 }
