@@ -19,6 +19,7 @@ class ScheduleFactory extends Factory
             'date' => $this->faker->date(),
             'status' => 'Approved',
             // 'timeslot_id' => $this->faker->randomDigitNotNull(),
+            'service_id' => $this->faker->randomDigitNotNull(),
         ];
     }
 }
