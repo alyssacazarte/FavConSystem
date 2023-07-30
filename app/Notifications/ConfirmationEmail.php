@@ -20,7 +20,7 @@ class ConfirmationEmail extends Notification
      */
     public function __construct($message)
     {
-        $this->message = $message;
+        $this->data = $data;
 
     }
 
@@ -41,12 +41,40 @@ class ConfirmationEmail extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
+//     public function toMail($notifiable)
+//     {
+//         $email = new \SendGrid\Mail\Mail(); 
+//         $email->setFrom("jesamae.salado@student.passerellesnumeriques.org", "Example User");
+//         $email->setSubject("Sending with SendGrid is Fun");
+//         $email->addTo("leenunuyaa@gmail.com", "Example User");
+//         $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+//         $email->addContent("text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+// );
+//         $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+//         try {
+//         $response = $sendgrid->send($email);
+//         print $response->statusCode() . "\n";
+//         print_r($response->headers());
+//         print $response->body() . "\n";
+//         } catch (Exception $e) {
+//          echo 'Caught exception: '. $e->getMessage() ."\n";
+// }
+    
+//     }
+    public function build()
     {
-        return (new MailMessage)
-                    ->line($this->message)
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        $address = 'jesamae.salado@student.passerellesnumeriques.org';
+        $subject = 'This is a demo!';
+        $name = 'Jane Doe';
+
+        return $this->view('emails.test')
+                    ->from($address, $name)
+                    ->cc($address, $name)
+                    ->bcc($address, $name)
+                    ->replyTo($address, $name)
+                    ->subject($subject)
+                    ->with([ 'test_message' => $this->data['message'] ]);
+    
     }
 
     /**

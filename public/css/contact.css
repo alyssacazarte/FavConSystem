@@ -998,13 +998,13 @@ border: none;
 
 
 
-.contactBox .left form .genInfo, .subject, .remind, .message {
+.contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
     display: flex;
     justify-content: space-between;
     
 }
 
-.contactBox .left form input {
+.contactBox .left  .Fcontact input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -1017,15 +1017,15 @@ border: none;
     color: #FF7C03;
 }
 
-.contactBox .left form input:focus {
+.contactBox .left  .Fcontact input:focus {
     outline: none;
 }
 
-.contactBox .left form textarea:focus {
+.contactBox .left  .Fcontact textarea:focus {
     outline: none;
 }
 
-.contactBox .left form textarea {
+.contactBox .left  .Fcontact textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -1038,7 +1038,7 @@ border: none;
 }
 
 
-.contactBox .left form .remind input {
+.contactBox .left  .Fcontact .remind input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -1050,10 +1050,10 @@ border: none;
     height: 50px;
     color: #FF7C03;
 }
-.contactBox .left form .remind input::placeholder{
+.contactBox .left  .Fcontact .remind input::placeholder{
     color: #FF7C03;
 }
-.contactBox .left form .remind img{
+.contactBox .left  .Fcontact .remind img{
     width: 20px;
     height: 20px;
     margin-left: 15px;
@@ -1167,7 +1167,7 @@ button {
     
     }
     
-    .contactBox .left form .genInfo, .subject, .remind, .message {
+    .contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
         display: block;
         justify-items: center;        
     }
@@ -1196,7 +1196,7 @@ button {
     
     }
     
-    .contactBox .left form .genInfo, .subject, .remind, .message {
+    .contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
         display: block;
         justify-items: center;
         
@@ -1211,6 +1211,7 @@ button {
         width: 200px;
         font-size: 10px;
     }
+    
     
 }
 
@@ -1279,7 +1280,7 @@ button {
     
     }
     
-    .contactBox .left .genInfo, .subject, .remind, .message {
+    .contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
         display: block;
         justify-items: center;
         
@@ -1300,11 +1301,11 @@ button {
         font-size: 10px;
     }
 
-    .contactBox .left form input {
+    .contactBox .left .Fcontact input {
         margin: 0;
         margin-bottom: 20px;
     }
-    .contactBox .left form textarea {
+    .contactBox .left .Fcontact textarea {
         margin: 0 ;
         margin-bottom: 30px;
 

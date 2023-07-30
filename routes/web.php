@@ -58,7 +58,7 @@ Route::get('/schedule-dashboard', [AdminViewController::class, 'scheduleview'])-
 Route::get('service-dashboard', [AdminViewController::class, 'serviceview'])->name('admin.service');
 Route::get('/timeslot-dashboard', [AdminViewController::class, 'timeslotview'])->name('admin.timeslot');
 Route::get('/request-dashboard', [AdminViewController::class, 'requestview'])->name('admin.request');
-=======
+
 //Contact Route
 
 

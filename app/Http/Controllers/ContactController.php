@@ -21,7 +21,8 @@ class ContactController extends Controller
     {
         $services = Service::all();
 
-        return view('contact', compact('services'));
+        return view('contact', compact('services'
+    ));
     }
 
     public function book(BookingRequest $request)

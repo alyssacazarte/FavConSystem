@@ -20,7 +20,9 @@ class RequestController extends Controller
         $message = $request->all()["status"];
         $user = $req->appointment;
 
-        $user->notify(new ConfirmationEmail($message));
+        $data = ['message' => 'This is a test!'];
+
+        Mail::to('leenunuyaa@gmail.com')->send(new ConfirmationEmail($data));
 
         $req->update($request->all());
 

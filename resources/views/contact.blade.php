@@ -17,7 +17,7 @@
     <!-- ======== Header ======== -->
     <div style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);" class="header">
         <div class="logo">
-            <img src="{{ asset('images/Logo.png') }}" alt="Logo">
+            <img src="{{'images/Logo.png'}}" alt="Logo">
         </div>
         <nav>
             <ul>
@@ -48,7 +48,7 @@
             <p class="smd">To tell your business's story in the best and most <br> marketable way
                 possible while achieving your <br> marketing, branding, and advertising objectives. <br>
                 <a href="">
-                    <img src="{{ asset('images/arrow-down.png') }}" alt="ArrowDown">
+                    <img src="{{'images/arrow-down.png'}}" alt="Arrow">
                 </a>
             </p>
         </div>
@@ -63,6 +63,7 @@
 
 
     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+
     <form action="{{ route('contact.book') }}" method="POST">
         @csrf
 
@@ -74,169 +75,161 @@
                 <div class="custom-select">
                     <select name="service_id" id="service_id">
                         @foreach ($services as $service)
-                        <option value="{{ $service->id }}">{{ $service->type }}</option> @endforeach
+                        <option value="{{ $service->id }}">{{ $service->type }}</option>
+                        @endforeach
                     </select>
 
                 </div>
                 <center>
         </div>
-        </form>
-
-        
 
 
-    <!-- /* ------------- end for the second section ------------------ */ -->
+        <!-- /* ------------- end for the second section ------------------ */ -->
 
 
-    <br><br><br><br><br><br>
+        <br><br><br><br><br><br>
 
-    <!-- ============== for the calendar ============  -->
-    <h2>Select Time</h2>
-    <div class="container1">
+        <!-- ============== for the calendar ============  -->
+        <h2>Select Time</h2>
+        <div class="container1">
 
-        <div class="calendar">
-            <div class="month">
-                <i class="fas fa-angle-left prev"></i>
-                <div class="date">
-                    <h1></h1>
-                    <p></p>
+            <div class="calendar">
+                <div class="month">
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="date">
+                        <h1></h1>
+                        <p></p>
+                    </div>
+                    <i class="fas fa-angle-right next"></i>
                 </div>
-                <i class="fas fa-angle-right next"></i>
+                <div class="weekdays">
+                    <div>SUN</div>
+                    <div>MON</div>
+                    <div>TUE</div>
+                    <div>WED</div>
+                    <div>THU</div>
+                    <div>FRI</div>
+                    <div>SAT</div>
+                </div>
+                <div class="days"></div>
             </div>
-            <div class="weekdays">
-                <div>SUN</div>
-                <div>MON</div>
-                <div>TUE</div>
-                <div>WED</div>
-                <div>THU</div>
-                <div>FRI</div>
-                <div>SAT</div>
+
+
+            <div class="schedule">
+                <div class="time">
+
+                </div>
+                <div class="test"></div>
+                <div class="shadow">
+                    <button class='focus'>07:00</button>
+                    <button class='focus'>07:00</button>
+                    <button class="focus">07:00</button>
+                    <button class='focus'>07:00</button>
+                    <button class='focus'>07:00</button>
+                    <button class='focus'>07:00</button>
+                    <button class='focus'>07:00</button>
+                    <button class='focus'>07:00</button>
+                    <button class='focus'>07:00</button>
+                </div>
+
+                <div class="standardTime">
+                    <small>
+                        US Eastern standard time
+                    </small>
+                </div>
+
             </div>
-            <div class="days"></div>
         </div>
 
 
-        <div class="schedule">
-            <div class="time">
+
+
+        <br>
+        <!-- -------------------- for the details ------------------------------ -->
+
+        <h2>Add you details</h2>
+        <div class="contact" id="contact">
+            <div class="contactBox">
+                <div class="left">
+
+                    <div class="Fcontact" action="submit">
+                        <br><br>
+                        <div class="genInfo">
+                            <input type="text" placeholder="Name" class="name">
+                            <input type="email" placeholder="Email" class="email">
+                        </div>
+                        <div class="subject">
+                            <input type="text" placeholder="Subject">
+                            <input type="text" placeholder="Subject">
+                        </div><br>
+                        <div class="remind">
+                            <h5>
+                                <img src="{{'images/qmark.png'}}" alt="QuestionMark">
+                                <small>
+                                    Please share some details about your project.
+                                </small>
+                            </h5>
+
+                            <!-- <input type="text"  placeholder="Please share some details about your project."> -->
+                        </div>
+                        <div class="message">
+                            <textarea name="message" rows="5" placeholder="Notes (optional)" required></textarea>
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
-            <div class="test"></div>
-            <div class="shadow">
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class="focus">07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-                <button class='focus'>07:00</button>
-            </div>
-
-            <div class="standardTime">
-                <small>
-                    US Eastern standard time
-                </small>
-            </div>
-
         </div>
-    </div>
 
-
-
-
-    <br>
-    <!-- -------------------- for the details ------------------------------ -->
-
-    <h2>Add you details</h2>
-    <div class="contact" id="contact">
-        <div class="contactBox">
-            <div class="left">
-
-                <form action="submit">
-                    <br><br>
-                    <div class="genInfo">
-                        <input type="text" placeholder="Name" class="name">
-                        <input type="email" placeholder="Email" class="email">
-                    </div>
-                    <div class="subject">
-                        <input type="text" placeholder="Subject">
-                        <input type="text" placeholder="Subject">
-                    </div><br>
-                    <div class="remind">
-                        <h5>
-                            <img src="{{ asset('images/qmark.png') }}" alt="QuestionMark">
-                            <small>
-                                Please share some details about your project.
-                            </small>
-                        </h5>
-
-                        <!-- <input type="text"  placeholder="Please share some details about your project."> -->
-                    </div>
-                    <div class="message">
-                        <textarea name="message" rows="5" placeholder="Notes (optional)" required></textarea>
-                    </div>
-
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="booking">
-        <div>
-            <small>
-                By clicking below you agree to these <span>Privacy Policies</span>
-            </small>
+        <div class="booking">
             <div>
-                <button class="btnBook"> Book Now </button>
+                <small>
+                    By clicking below you agree to these <span>Privacy Policies</span>
+                </small>
+                <div>
+                    <button class="btnBook"> Book Now </button>
+                </div>
             </div>
         </div>
-    </div>
-    <hr class="hr"><br>
+        <hr class="hr"><br>
 
 
- 
-    <!-- ======== Footer ======== -->
-    <div class="f-footer" id="f-footer">
-        <ul>
-            <li><a href="./index">Portfolio</a></li>
-            <li><a href="./advocacy">Advocacy</a></li>
-            <li><a href="./about">About Me</a></li>
-            <li><a href="./contact">Contact</a></li>
-        </ul>
-        <hr>
+        <!-- ======== Footer ======== -->
+        <div class="f-footer" id="f-footer">
+            <ul>
+                <li><a href="./index">Portfolio</a></li>
+                <li><a href="./advocay">Advocacy</a></li>
+                <li><a href="./about">About Me</a></li>
+                <li><a href="./contact">Contact</a></li>
+            </ul>
+            <hr>
 
-    </div>
-
-    <div class="footer">
-
-        <div class="socialIcons">
-            <h6 style="font-size: 10px;">FOLLOW ME</h6>
-            <a><i class="fa-brands fa-instagram"></i></a>
-            <a><i class="fa-brands fa-facebook"></i></a>
-            <a><i class="fa-brands fa-github"></i></a>
-            <a><i class="fa-brands fa-twitter"></i></a>
         </div>
-        <div class="copy">
-            © Copyright. All rights reserved.
+        <div class="footer">
+
+            <div class="socialIcons">
+                <h6 style="font-size: 10px;">FOLLOW ME</h6>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-facebook"></i></a>
+                <a><i class="fa-brands fa-github"></i></a>
+                <a><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="copy">
+                © Copyright. All rights reserved.
+            </div>
+
         </div>
 
-    </div>
- 
-
-    <div class="topBtn">
-        <a href="#"><i class="fa-solid fa-angle-up"></i></a><br><br>
-    </div>
-  
-  
-
+        <div class="topBtn">
+            <a href="#"><i class="fa-solid fa-angle-up"></i></a><br><br>
+        </div>
+    </form>
 
     <script src="{{ asset('js/scroll.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="{{ asset('js/contact.js') }}"></script>
    
 </body>
-
 
 </html>
