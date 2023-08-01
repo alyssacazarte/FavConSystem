@@ -96,6 +96,10 @@ Route::post('/admin/requests/', [AdminController::class, 'editSettingsRequests']
 //requests appointments
 Route::get('/admin/appointments', [AdminController::class, 'appointments']);
 
-
-
 Route::post('/get-schedule', [ContactController::class, 'getSchedule'])->name('get.schedule');
+
+//login
+Route::get('/login', [AdminViewController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AdminViewController::class, 'login']);
+Route::post('/logout', [AdminViewController::class, 'logout'])->name('logout');
+

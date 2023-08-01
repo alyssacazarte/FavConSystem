@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use Auth;
 
 class AdminViewController extends Controller
 {
@@ -22,5 +23,25 @@ class AdminViewController extends Controller
     }
     public function requestview() {
         return view ('layout.admin.request');
+    }
+
+    public function showLoginForm()
+    {
+        return view('login');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            dd($credentials);
+            return redirect('/');
+        }
+        return back()->withInput()->withErrors(['email' => 'Invalid login credentials']);
     }
 }
