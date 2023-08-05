@@ -102,4 +102,3 @@ Route::post('/get-schedule', [ContactController::class, 'getSchedule'])->name('g
 Route::get('/login', [AdminViewController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AdminViewController::class, 'login']);
 Route::post('/logout', [AdminViewController::class, 'logout'])->name('logout');
-
