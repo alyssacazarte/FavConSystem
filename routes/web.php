@@ -11,6 +11,7 @@ use App\Http\Controllers\AdvocacyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminViewController;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,3 +103,6 @@ Route::post('/get-schedule', [ContactController::class, 'getSchedule'])->name('g
 Route::get('/login', [AdminViewController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AdminViewController::class, 'login']);
 Route::post('/logout', [AdminViewController::class, 'logout'])->name('logout');
+
+//localization
+Route::get('/lang/{locale}',  [LocalizationController::class, 'setLocale'])->name('setLocale');
