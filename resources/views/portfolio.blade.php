@@ -11,6 +11,7 @@
     <!-- <link rel="stylesheet" href="Portfolio.css"> -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="{{ asset('css/portfolio.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/Logo.png') }}" type="image/x-icon">
     <title>Portfolio</title>
 </head>
 
@@ -24,9 +25,28 @@
         <nav>
             <ul>
                 <li><a class="active" href="portfolio">Portfolio</a></li>
-                <li><a href="advocacy">Advocacy</a></li>
+                <li><a href="advocacy">Experience</a></li>
                 <li><a href="about">About</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="contact">Contact</a></li> &nbsp;
+                <div class="language-selector">
+                    <button class="current-language">
+                        <img src="{{ asset('images/us.png') }}" alt="USA Flag">
+                        English
+                    </button>
+                    <ul class="language-list">
+                        <li>
+                            <a  href="portfolio/">
+                                <img src="{{ asset('images/us.png') }}" alt="USA Flag">{{__('messages.English')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="portfolio/">
+                                <img src="{{ asset('images/spain.png') }}">{{__('messages.Espanol')}}
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </div>
             </ul>
             <div class="bar">
                 <i class="open fa-solid fa-bars"></i>
@@ -41,19 +61,17 @@
         <div class="home" id="home">
             <div class="left text">
                 <span>Hello, I'm</span><br>
-                <h1>Hi! I’m</h1>
+                <h1>{{ __('messages.Portfolio Landing Header')}}</h1>
                 <h1><span class="typing1"></span></h1><br>
 
-                <p>I help businesses grow through the power of digital
-                    marketing and <br> creative strategy.
-                    Learn more about my award-winning tactics <br> and experience!
-                </p>
+                <p>{{__('messages.Portfolio Landing Description 1')}}</p>
+                <p>{{__('messages.Portfolio Landing Description 2')}}</p>
                 <div class="buttons">
-                    <button class="btn"><a href="contact">Get Started</a></button>
+                    <button class="btn"><a href="contact">{{__('messages.Portfolio Landing Button')}}</a></button>
                 </div>
             </div>
             <div class="image">
-                <img src="{{ asset('images/profile.png') }}" alt="Profile">
+                <img src="{{ asset('images/faviodp.png') }}" alt="Profile">
             </div>
         </div><br><br>
 
@@ -61,7 +79,7 @@
         <!-- ====== for the project section ======== -->
         <div class="project" id="project">
             <div class="title aboutTxt">
-                <span>PROJECTS </span>
+                <span>{{__('messages.Portfolio Landing Project Header')}} </span>
             </div>
         </div>
         <div class="background">
@@ -76,14 +94,11 @@
                     <div class="card_project">
                         <img src="{{ asset('images/aphelion.png') }}" alt="Aphelion">
                         <div class="card-content">
-                            <h2>Creative Project Lead</h2><br><br>
-                            <p> Trained over 22 influencer talent
-                                accounts increasing our network following
-                                by over 700,000 combined.</p>
+                            <h2>{{__('messages.Portfolio Landing Project Card Two Header')}}</h2><br><br>
+                            <p> {{__('messages.Portfolio Landing Project Card Two Description')}}</p>
 
                             <button onclick="document.getElementById('id02').style.display='block'" class="btn"
-                                style="font-size: 12px;font-weight: bold; margin-bottom: 1rem;"><a href="#">READ
-                                    MORE</a>
+                                style="font-size: 12px;font-weight: bold; margin-bottom: 1rem;"><a href="#">{{__('messages.Read More Button')}}</a>
                             </button>
 
                             <div id="id01" class="w3-modal">
@@ -93,9 +108,8 @@
                                         <span onclick="document.getElementById('id01').style.display='none'"
                                             class="w3-button w3-display-topright">&times;</span>
                                         <h5 style="padding: 3rem; text-align: justify;">
-                                            <li>Coordinated with over 12+ influencer and commentary talent for
-                                                interviews and participation while <center>live.</center></li>
-                                            <li> Moderated Team Liquid Mobile discord server of 30,000 members.</li>
+                                        <li>{{__('messages.Portfolio Landing Project Card One Description 1')}}</li>
+                                        <li>{{__('messages.Portfolio Landing Project Card One Description 2')}}</li>
                                         </h5>
 
                                     </div>
@@ -108,15 +122,10 @@
                     <div class="card_project">
                         <img src="{{ asset('images/teamliquid.png') }}" alt="TeamLiquid">
                         <div class="card-content">
-                            <h2>Event Coordinator</h2><br>
-                            <p> Launched the “Team Liquid Tournament” an esports event with over $1,000 of prizes
-                                tournament garnered 500,000+ views across Live
-                                Streams and YouTube post streams, presented ideas for side events, community
-                                participation and more.</p>
-
+                            <h2>{{__('messages.Portfolio Landing Project Card One Header')}}</h2><br>
+                            <p>{{__('messages.Portfolio Landing Project Card One Description')}}</p>
                             <button onclick="document.getElementById('id01').style.display='block'" class="btn"
-                                style="font-size: 12px;font-weight: bold; margin-bottom: 1rem;"><a href="#">READ
-                                    MORE</a>
+                                style="font-size: 12px;font-weight: bold; margin-bottom: 1rem;"><a href="#">{{__('messages.Read More Button')}}</a>
                             </button>
 
                             <div id="id02" class="w3-modal">
@@ -126,13 +135,10 @@
                                         <span onclick="document.getElementById('id02').style.display='none'"
                                             class="w3-button w3-display-topright">&times;</span>
                                         <h5 style="padding: 3rem; text-align: justify;">
-                                            <li>Directed all Internal content on YouTube, Twitter, Instagram, capturing
-                                                over 15,000 new followers.</li>
-                                            <li>Esports teams over 1 year time period competed for over $1,050,000+.
-                                            </li>
-                                            <li>Assisted in securing funding ($50,000+) and creating pitch decks for
-                                                investors and sponsors.</li>
-                                            <li>Negotiated in Spanish for new influencer talent and esports teams.</li>
+                                        <li>{{__('messages.Portfolio Landing Project Card Two Description 1')}}</li>
+                                        <li>{{__('messages.Portfolio Landing Project Card Two Description 2')}}</li>
+                                        <li>{{__('messages.Portfolio Landing Project Card Two Description 3')}}</li>
+                                        <li>{{__('messages.Portfolio Landing Project Card Two Description 4')}}</li>
                                         </h5>
 
                                     </div>
@@ -156,7 +162,7 @@
     <!-- ====== for the services section ======== -->
     <div class="services" id="services">
         <div class="servicesTxt title">
-            <span>Services</span>
+            <span>{{__('messages.Portfolio Landing Services Header')}}</span>
         </div><br><br><br>
         <div class="serviceBox">
             <div class="box">
@@ -165,24 +171,15 @@
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <div>
-                        <div class="text">Social Media <br> Management / Marketing</div><br>
-                        <p>This service involves managing and maintaining your social media profiles on various
-                            platforms, such as Facebook, Twitter, Instagram, and LinkedIn. It also involves developing
-                            and executing a social media strategy to promote your business, brand, or product.
-                        </p><br>
-                        <span class="click-span" style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE
+                        <div class="text">{{__('messages.Portfolio Landing Services Card One Header')}}</div><br>
+                        <p>{{__('messages.Portfolio Landing Services Card One Description')}}</p><br>
+                        <span class="click-span" style="color: #FF7C03; cursor: pointer;font-size: small;">{{__('messages.Read More Button')}}
                         </span>
                         <div class="modal">
                             <div class="modal-content">
                                 <span class="close-btn">&times;</span>
-                                <h2> More about: </h2>
-                                <p>I would be responsible for creating and curating content, scheduling posts, engaging
-                                    with followers, and monitoring analytics to measure the success of the social media
-                                    strategy. Moreover, I would be responsible for creating and curating content,
-                                    scheduling posts, engaging with followers, and monitoring analytics to measure the
-                                    success of the social media strategy. The goal of social media marketing is to
-                                    increase brand awareness, generate leads, and drive traffic to the client's website.
-                                </p>
+                                <h2>{{__('messages.More about')}}</h2>
+                                <p>{{__('messages.Portfolio Landing Services Card One Modal Description')}}</p>
                             </div>
                         </div>
                     </div>
@@ -195,20 +192,15 @@
                         <i class="fa-solid fa-chart-pie"></i>
                     </div>
                     <div>
-                        <div class="text">Paid Social Ads</div><br>
-                        <p>This service involves creating and managing paid advertising campaigns on social media
-                            platforms such as Facebook, Instagram, Twitter, and LinkedIn.
-                        </p><br><br><br><br>
+                        <div class="text">{{__('messages.Portfolio Landing Services Card Two Header')}}</div><br>
+                        <p>{{__('messages.Portfolio Landing Services Card Two Description')}}</p><br><br><br><br>
                         <span class="click-test"
-                            style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE</span>
+                            style="color: #FF7C03; cursor: pointer;font-size: small;">{{__('messages.Read More Button')}}</span>
                         <div class="test">
                             <div class="modal-content">
                                 <span class="close-test">&times;</span>
-                                <h2> More about: </h2>
-                                <p>I would be responsible for identifying the target audience, developing ad copy and
-                                    creative, setting up and monitoring the ad campaign, and analyzing the results to
-                                    optimize the campaign for maximum ROI.
-                                </p>
+                                <h2>{{__('messages.More about')}}</h2>
+                                <p>{{__('messages.Portfolio Landing Services Card Two Modal Description')}}</p>
                             </div>
                         </div>
                     </div>
@@ -221,20 +213,15 @@
                         <i class="fa-solid fa-brush"></i>
                     </div>
                     <div>
-                        <div class="text">Graphic Design</div><br>
-                        <p>This service involves creating visual content for various marketing materials such as social
-                            media posts, email campaigns, websites, and print materials.
-                        </p><br><br><br>
+                        <div class="text">{{__('messages.Portfolio Landing Services Card Three Header')}}</div><br>
+                        <p>{{__('messages.Portfolio Landing Services Card Three Description')}}</p><br><br><br>
                         <span class="click-third"
-                            style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE</span>
+                            style="color: #FF7C03; cursor: pointer;font-size: small;">{{__('messages.Read More Button')}}</span>
                         <div class="third">
                             <div class="modal-content">
                                 <span class="close-third">&times;</span>
-                                <h2> More about: </h2>
-                                <p>I would be responsible for creating design concepts, selecting images and typography,
-                                    and producing high-quality graphics that align with the client's brand and
-                                    messaging.
-                                </p>
+                                <h2> {{__('messages.More about')}}</h2>
+                                <p>{{__('messages.Portfolio Landing Services Card Three Modal Description')}}</p>
                             </div>
                         </div>
                     </div>
@@ -247,20 +234,15 @@
                         <i class="fa-solid fa-pencil"></i>
                     </div>
                     <div>
-                        <div class="text">Marketing / Branding <br> Consulting</div>
-                        <p>This service involves providing strategic advice and guidance on marketing and branding
-                            initiatives to help clients achieve their business objectives.</p><br><br><br><br>
+                        <div class="text">{{__('messages.Portfolio Landing Services Card Four Header')}}</div>
+                        <p>{{__('messages.Portfolio Landing Services Card Four Description')}}</p><br><br><br><br>
                         <span class="click-fourt"
-                            style="color: #FF7C03; cursor: pointer;font-size: small;">READMORE</span>
+                            style="color: #FF7C03; cursor: pointer;font-size: small;">{{__('messages.Read More Button')}}</span>
                         <div class="fourt">
                             <div class="modal-content">
                                 <span class="close-fourt">&times;</span>
-                                <h2> More about: </h2>
-                                <p>I would be responsible for analyzing the client's current marketing efforts,
-                                    identifying opportunities for improvement, and developing a comprehensive plan for
-                                    achieving their goals. I would also provide ongoing support and advice to ensure the
-                                    client's marketing and branding initiatives are successful.
-                                </p>
+                                <h2> {{__('messages.More about')}} </h2>
+                                <p>{{__('messages.Portfolio Landing Services Card Four Modal Description')}}</p>v
                             </div>
                         </div>
                     </div>
@@ -277,13 +259,11 @@
 
         <div class="lets" id="lets">
             <div class="consult">
-                <p style="color: #660808; margin-top: -5rem;">LOOKING FOR AN EXPERT</p><br><br>
-                <h1 style="font-size: 3rem;color: white;text-shadow: 2px 2px #7d7c7c; font-weight: bold;">LET'S START A
-                    PROJECT TOGETHER
+                <p style="color: #660808; margin-top: -5rem;">{{__('messages.Portfolio Landing Footer Subheader')}}</p><br><br>
+                <h1 style="font-size: 3rem;color: white;text-shadow: 2px 2px #7d7c7c; font-weight: bold;">{{__('messages.Portfolio Landing Footer Header')}}
                 </h1>
                 <div class="buttons">
-                    <button style="border: 3px solid #FF7C03;" class="btn"><a href="#contact">TELL ME THE
-                            DETAILS</i></a></a></button>
+                    <button style="border: 3px solid #FF7C03;" class="btn"><a href="./contact">{{__('messages.Portfolio Landing Footer Button')}}</i></a></a></button>
                 </div>
             </div>
         </div>
@@ -296,10 +276,10 @@
     <div class="f-footer" id="f-footer">
 
         <ul>
-            <li><a href="./portfolio">Portfolio</a></li>
-            <li><a href="./advocacy">Advocacy</a></li>
-            <li><a href="./about">About Me</a></li>
-            <li><a href="./contact">Contact</a></li>
+            <li><a href="./portfolio">{{__('messages.Portfolio')}}</a></li>
+            <li><a href="./advocacy">Experience</a></li>
+            <li><a href="./about">{{__('messages.About')}}</a></li>
+            <li><a href="./contact">{{__('messages.Contact')}}</a></li>
         </ul>
         <hr>
 
@@ -307,14 +287,14 @@
         <div class="footer">
 
             <div class="socialIcons">
-                <h6 style="font-size: 10px;">FOLLOW ME</h6>
+                <h6 style="font-size: 10px;">{{__('messages.Portfolio Landing Footer Ending Button')}}</h6>
                 <a><i class="fa-brands fa-instagram"></i></a>
                 <a><i class="fa-brands fa-facebook"></i></a>
-                <a><i class="fa-brands fa-github"></i></a>
-                <a><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/FavioJasso"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/FavioJasso"><i class="fa-brands fa-twitter"></i></a>
             </div>
             <div class="copy">
-                © Copyright. All rights reserved.
+            {{__('messages.Portfolio Landing Footer Credits')}}
             </div>
 
         </div>

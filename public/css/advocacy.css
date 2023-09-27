@@ -117,7 +117,66 @@ nav ul li a {
 nav ul li:hover a {
     color: #fff;
 }
+/* ----------------- for the language------------- */
+.language-selector {
+    position: relative;
+  }
+  
+  .current-language {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .current-language img {
+    width: 30px;
+    height: 19px;
+    margin-right: 5px;
+  }
+  
+  .language-list {
+    color: #000;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+  }
+  
+  .language-list.active {
+    display: block;
+  }
+  
+  .language-list li {
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0;
+    
+
+  }
+
+  .language-list li .brazil {
+color: red;
+  }
+   .language-list li img {
+    width: 30px;
+   }
+  .language-list li:hover {
+    background-color: #f0f0f0;
+    color: #FF7C03;
+  }
 /* ===== end of the Header ===== */
+
 
 
 /* ============ for the btn ============ */
@@ -499,14 +558,15 @@ nav ul li:hover a {
     .card-container {
         grid-template-columns: 1fr;
         padding: 20px 40px;
+      
     }
-
+ 
     .card-image {
         width: 160px;
         height: 170px;
     }
     .card-modal-content .card-definition-full img {
-        width: 200px;
+        width: 100px;
     }
 
     .card-modal-content .card-definition-full  {
@@ -514,10 +574,15 @@ nav ul li:hover a {
         align-items: center;
         justify-content: center;
         text-align: justify;
+        width: 300px;
+        height: 550px;
+        overflow: auto;
     
     
     }
-
+    /* .card-modal-overlay {
+        margin: 50px;
+    } */
 
 }
 /* ================== for the 3 columns ===================== */

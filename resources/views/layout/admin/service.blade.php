@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Services Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <!-- Montserrat Font -->
     <link
@@ -16,21 +16,16 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/admin_css/service.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/Logo.png') }}" type="image/x-icon">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
 
     <div class="grid-container">
 
-        <!-- The modal -->
-        <!-- <div id="logoutModal" class="modal">
-            <div class="modal-content">
-                <h2>Logout</h2>
-                <p>Are you sure you want to logout?</p>
-                <button id="confirmLogout">Logout</button>
-                <button id="cancelLogout">Cancel</button>
-            </div>
-        </div> -->
+
+
         <!-- Header -->
         <header class="header">
             <div class="menu-icon" onclick="openSidebar()">
@@ -39,36 +34,40 @@
             <div class="header-left">
 
             </div>
+
+
             <div class="header-right">
-                <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img  src="{{ asset('images/favio.png') }}" alt="Profile"></span>
-                <div class="dropdown-content" id="dropdownContent">
-                    <div class="dropdown-item"><a href="">Go to site</a> 
-                    </div>
-
-                    <div class="dropdown-item"><a href="#">Change Pass</a> 
-                    </div>
-
-                    <div class="dropdown-item"><a href="logoutTest.html">Logout</a> 
-                    </div>
-                   
-                </div>
-            </div>
-
-
                 <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img
-                        src="{{ asset('images/favio.png') }}" alt="Profile"></span>
+                src="{{asset ('images/faviodp.jpg' ) }}" alt="Profile"></span>
+                <p>{{ Auth::user()->name }}</p>
                 <div class="dropdown-content" id="dropdownContent">
-                    <div class="dropdown-item"><a href="">Go to site</a>
+                    <!-- <div class="dropdown-item"><a href="">Go to site</a>
+                    </div> -->
+
+                    <div class="dropdown-item">
+                        <a href="/change-password">Change Password</a>
                     </div>
 
-                    <div class="dropdown-item"><a href="#">Change Pass</a>
+                    <div class="dropdown-item" id="logoutButton">Logout</div>
+
+                    
+                    <!-- ------- for the logoutmodal ---------- -->
+
+                    <div class="overlay" id="overlay"></div>
+                    <div class="modal" id="modal">
+                        <p>Are you sure you want to logout?</p>
+                        <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                        </form>
+                        <button id="CLogout">Cancel</button>
                     </div>
 
-                    <div class="dropdown-item"><a href="logoutTest.html">Logout</a>
-                    </div>
 
                 </div>
+
             </div>
+
 
 
         </header>
@@ -78,12 +77,17 @@
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
-                    <span class="material-icons-outlined">inventory</span> Favio's Inventory
+                <img src="{{ asset('images/Logo.png') }}" alt="Logo">
                 </div>
                 <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
             </div>
 
             <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                    <a href="admin-dashboard">
+                        <span class="material-icons-outlined">fact_check</span> Dashboard
+                    </a>
+                </li>
                 <li class="sidebar-list-item">
                     <a href="service-dashboard" class="active">
                         <span class="material-icons-outlined">work</span> Service
@@ -92,11 +96,6 @@
                 <li class="sidebar-list-item">
                     <a href="schedule-dashboard">
                         <span class="material-icons-outlined">task</span> Schedule
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="request-dashboard">
-                        <span class="material-icons-outlined">fact_check</span> Request
                     </a>
                 </li>
                 <li class="sidebar-list-item">
@@ -121,51 +120,44 @@
             <div class="main-title">
                 <p class="font-weight-bold">Service Table</p>
             </div>
+            <a href="/admin/service/create"><button>Create</button> </a>
             <div class="charts">
                 <div class="charts-card">
-                    <p class="chart-title">Hello! <br><br> This for the Table of Service</p>
-                </div>
-
-            </div>
-
-           <div class="buttons">
-            <button>
-                Create
-            </button>
-            <button>
-                Update
-            </button>
-            <button>
-                Delete
-            </button>
-           </div>
-           
-            <div class="charts"> 
-                <div class="charts-card">
-                    <table class="Sertitles">
+                    <br>
+                    <table>
                         <tr>
                             <th>Type</th>
                             <th>Description</th>
-                            <th>Duration</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
+                        @foreach ($services as $services)
+                        <tr>
+                            <td>{{ $services->type}}</td>
+                            <td>{{ $services->description}}</td>
+                            <td>{{ $services->status}}</td>
+                            <td>
+                            <div class="button-container">
+                                <a href="{{ url('/admin/service/update/'. $services->id) }}"><button>Update</button></a>
+                               <!-- <button class="delete-btn" data-id="{{ $services->id }}">Delete</button> -->
+                               </div>
+                            </td>
+                        </tr>
+                        @endforeach
                     </table>
                 </div>
 
-                <div class="buttons">
-                    <button>
-                        Create
-                    </button>
-                    <button>
-                        Update
-                    </button>
-                    <button>
-                        Delete
-                    </button>
-                </div>
-
+            </div>
         </main>
         <!-- End Main -->
+        <!-- <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <p>Are you sure you want to delete this service?</p>
+        <button id="confirmDeleteBtn">Confirm</button>
+        <button id="cancelDeleteBtn">Cancel</button>
+    </div>
+</div> -->
+
 
     </div>
 
@@ -177,3 +169,6 @@
 </body>
 
 </html>
+<!-- <script>
+    window.csrfToken = @json(csrf_token());
+</script> -->

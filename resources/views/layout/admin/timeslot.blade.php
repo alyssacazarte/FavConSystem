@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/admin_css/timeslot.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/Logo.png') }}" type="image/x-icon">
 </head>
 
 <body>
@@ -39,17 +40,32 @@
 
             </div>
             <div class="header-right">
-                <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img  src="{{ asset('images/favio.png') }}" alt="Profile"></span>
+                <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img
+                src="{{asset ('images/faviodp.jpg' ) }}" alt="Profile"></span>
+                <p>{{ Auth::user()->name }}</p>
                 <div class="dropdown-content" id="dropdownContent">
-                    <div class="dropdown-item"><a href="">Go to site</a> 
+                    <!-- <div class="dropdown-item"><a href="">Go to site</a>
+                    </div> -->
+
+                    <div class="dropdown-item">
+                        <a href="/change-password">Change Password</a>
                     </div>
 
-                    <div class="dropdown-item"><a href="#">Change Pass</a> 
+                    <div class="dropdown-item" id="logoutButton">Logout</div>
+
+                    
+                    <!-- ------- for the logoutmodal ---------- -->
+
+                    <div class="overlay" id="overlay"></div>
+                    <div class="modal" id="modal">
+                        <p>Are you sure you want to logout?</p>
+                        <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                        </form>
+                        <button id="CLogout">Cancel</button>
                     </div>
 
-                    <div class="dropdown-item"><a href="logoutTest.html">Logout</a> 
-                    </div>
-                   
                 </div>
             </div>
         </header>
@@ -59,12 +75,17 @@
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
-                    <span class="material-icons-outlined">inventory</span> Favio's Inventory
+                <img src="{{ asset('images/Logo.png') }}" alt="Logo">
                 </div>
                 <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
             </div>
 
             <ul class="sidebar-list">
+            <li class="sidebar-list-item">
+                    <a href="admin-dashboard">
+                        <span class="material-icons-outlined">fact_check</span> Dashboard
+                    </a>
+                </li>
                 <li class="sidebar-list-item">
                     <a href="service-dashboard">
                         <span class="material-icons-outlined">work</span> Service
@@ -75,11 +96,7 @@
                         <span class="material-icons-outlined">task</span> Schedule
                     </a>
                 </li>
-                <li class="sidebar-list-item">
-                    <a href="request-dashboard">
-                        <span class="material-icons-outlined">fact_check</span> Request
-                    </a>
-                </li>
+
                 <li class="sidebar-list-item">
                     <a href="appointment-dashboard">
                         <span class="material-icons-outlined">poll</span> Appointment
@@ -102,9 +119,35 @@
             <div class="main-title">
                 <p class="font-weight-bold">Timeslots Table</p>
             </div>
+            <a href="/admin/timeslot/create"><button>Create</button></a>
             <div class="charts">
                 <div class="charts-card">
-                    <p class="chart-title">Hello! <br><br> This for the Table of Timeslots</p>
+
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Service Type</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        @foreach ($timeslots as $timeslot)
+                        <tr>
+                            <td>{{ $timeslot->schedule->service->type}}</td>
+                            <td>{{ $timeslot->schedule->date}}</td>
+                            <td>{{ $timeslot->start_time}}</td>
+                            <td>{{ $timeslot->end_time}}</td>
+                            <td>{{ $timeslot->status}}</td>
+                            <td class="update-button-cell">
+                            @if ($timeslot->status == 'Available')
+                            <a href="{{ url('/admin/timeslot/update/'. $timeslot->id) }}"><button>Update</button></a>
+                            @endif
+                        </td>
+                        </tr>
+                        @endforeach
+                    </table>
                 </div>
 
             </div>

@@ -15,10 +15,11 @@ class CreateTimeslotsTable extends Migration
     {
         Schema::create('timeslots', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('schedule_id');
             $table->string("start_time");
             $table->string("end_time");
             $table->string("status");
-            $table->unsignedBigInteger('schedule_id');
+            
         });
     }
 

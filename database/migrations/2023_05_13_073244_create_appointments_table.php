@@ -15,16 +15,16 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("request_id")->nullable();
+            $table->unsignedBigInteger("schedule_id")->nullable();
+            $table->unsignedBigInteger("timeslot_id")->nullable();
             $table->unsignedBigInteger("service_id")->nullable();
-            $table->date("date");
-            $table->string("start_time");
-            $table->string("end_time");
             $table->string("name");
             $table->string("email");
             $table->string("address");
             $table->string("phone_no");
             $table->string("notes");
+            $table->timestamp("created_at");
+            $table->string("status")->default("Pending");
         });
     }
 
@@ -32,4 +32,5 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::dropIfExists('appointments');
     }
+    
 }

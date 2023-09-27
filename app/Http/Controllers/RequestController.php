@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Request as Requests;
 use App\Notifications\ConfirmationEmail;
 
+
 class RequestController extends Controller
 {
     public function index(){

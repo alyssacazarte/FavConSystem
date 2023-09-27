@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\Appointment::factory(10)->create();
-        \App\Models\Requests::factory(10)->create();
         \App\Models\Schedule::factory(10)->create();
         \App\Models\Service::factory(10)->create();
         \App\Models\Timeslot::factory(10)->create();

@@ -1,1 +1,0 @@
-<h1>Schedule updated successfully</h1>

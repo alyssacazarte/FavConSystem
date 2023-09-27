@@ -120,6 +120,64 @@ nav ul li a {
 nav ul li:hover a {
     color: #fff;
 }
+/* ----------------- for the language------------- */
+.language-selector {
+    position: relative;
+  }
+  
+  .current-language {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .current-language img {
+    width: 30px;
+    height: 19px;
+    margin-right: 5px;
+  }
+  
+  .language-list {
+    color: #000;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+  }
+  
+  .language-list.active {
+    display: block;
+  }
+  
+  .language-list li {
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 0;
+    
+
+  }
+
+  .language-list li .brazil {
+color: red;
+  }
+   .language-list li img {
+    width: 30px;
+   }
+  .language-list li:hover {
+    background-color: #f0f0f0;
+    color: #FF7C03;
+  }
 
 /* ===== end of the Header ===== */
 
@@ -832,11 +890,11 @@ p {
 }
 
 .month h1 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
 }
 
 .month p {
@@ -942,7 +1000,7 @@ p {
     /* margin-bottom: 90px; */
 }
 
-button {
+.focus {
     outline: none;
     cursor: pointer;
     height: 50px;
@@ -964,7 +1022,7 @@ button {
     justify-content: center;
     text-align: center;
     outline: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     height: 50px;
     width: 90%;
     border-radius: 15px;
@@ -986,7 +1044,7 @@ button {
 /* .test {
   } */
 
-button:hover {
+.focus:hover {
     background-color: rgb(236, 205, 146);
     border: solid 1px orange;
     color: #fff;
@@ -1054,13 +1112,16 @@ button:hover {
 
 
 
-.contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
+.contactBox .left form .genInfo,
+.subject,
+.remind,
+.message {
     display: flex;
     justify-content: space-between;
 
 }
 
-.contactBox .left  .Fcontact input {
+.contactBox .left form input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -1073,15 +1134,15 @@ button:hover {
     color: #FF7C03;
 }
 
-.contactBox .left  .Fcontact input:focus {
+.contactBox .left form input:focus {
     outline: none;
 }
 
-.contactBox .left  .Fcontact textarea:focus {
+.contactBox .left form textarea:focus {
     outline: none;
 }
 
-.contactBox .left  .Fcontact textarea {
+.contactBox .left form textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -1094,7 +1155,7 @@ button:hover {
 }
 
 
-.contactBox .left  .Fcontact .remind input {
+.contactBox .left form .remind input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -1106,10 +1167,12 @@ button:hover {
     height: 50px;
     color: #FF7C03;
 }
-.contactBox .left  .Fcontact .remind input::placeholder{
+
+.contactBox .left form .remind input::placeholder {
     color: #FF7C03;
 }
-.contactBox .left  .Fcontact .remind img{
+
+.contactBox .left form .remind img {
     width: 20px;
     height: 20px;
     margin-left: 15px;
@@ -1167,116 +1230,6 @@ h5 small {
 }
 
 @media (max-width:768px) {
-/* --------------------- for calendar --------------- */
-
-.container1 {
-    flex-direction: column;
-}
-
-.calendar {
-    margin-right: 0;
-    margin-bottom: 20px;
-
-}
-
-.schedule {
-    margin-left: 0;
-}
-.shadow {
-    margin-top: 30px;
-  }
-
-button {
-    height: 30px;
-    width: 90px;
-    font-size: 10px;
-    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    
-  }
-
-  .standardTime{
-    align-items: center;
-    height: 35px;
-    width: 90%;
-    border-radius: 10px;
-    font-weight: bold;
-    margin-bottom: 50px;
-  }
-  .standardTime small{
-    font-size: 10px;
-    font-weight: 600;
-  }
-
-/* ----------------------------------------------------------- */
-
-/* --------------------- for add details --------------- */
-
-    h5 small {
-        padding-left: 18px ;
-       font-weight: 400;
-        padding: 18px;
-        color: green;
-       
-       }
-       #contact {
-        background: white;
-        margin: 20px 20px;
-        overflow-x: hidden;
-        box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        padding: 0;
-    
-    }
-    
-    .contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
-        display: block;
-        justify-items: center;        
-    }
-
-    .contactBox .left {
-        width: 300px;
-       
-    }
-    h5 {
-        width: 300px;
-    }
-    
-}
-
-@media (max-width:376px) {
-    h5 small {
-        color: red;
-       
-       }
-       #contact {
-        background: white;
-        margin: 200px 20px;
-        overflow-x: hidden;
-        box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-    
-    }
-    
-    .contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
-        display: block;
-        justify-items: center;
-        
-        
-    }
-
-    .contactBox .left {
-        width: 200px;
-       
-    }
-    h5 {
-        width: 200px;
-        font-size: 10px;
-    }
-    
-    
-}
-
-@media (max-width:415px) {
     /* --------------------- for calendar --------------- */
 
     .container1 {
@@ -1297,7 +1250,7 @@ button {
         margin-top: 30px;
     }
 
-    button {
+    .focus {
         height: 30px;
         width: 90px;
         font-size: 10px;
@@ -1424,7 +1377,7 @@ button {
 
     }
 
-    button {
+    .focus {
         height: 30px;
         width: 90px;
         font-size: 10px;
@@ -1464,8 +1417,11 @@ button {
         padding: 0;
 
     }
-    
-    .contactBox .left .Fcontact .genInfo, .subject, .remind, .message {
+
+    .contactBox .left .genInfo,
+    .subject,
+    .remind,
+    .message {
         display: block;
         justify-items: center;
 
@@ -1488,22 +1444,77 @@ button {
         font-size: 10px;
     }
 
-    .contactBox .left .Fcontact input {
+    .contactBox .left form input {
         margin: 0;
         margin-bottom: 20px;
     }
-    .contactBox .left .Fcontact textarea {
-        margin: 0 ;
+
+    .contactBox .left form textarea {
+        margin: 0;
         margin-bottom: 30px;
 
     }
-        h2{
-            display: none;
-                margin-top: 0;
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                color: #FF7C03;
-                font-size: 15px;
-                font-weight: 600;
-            
-        }
+
+    h2 {
+        display: none;
+        margin-top: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #FF7C03;
+        font-size: 15px;
+        font-weight: 600;
+
     }
+    .calendar {
+       
+        width: 20rem;
+       
+        margin-right: 0px;
+    }
+    .days div {
+        height: 30px;
+        margin: 0.3rem;
+        width: calc(14.2rem / 7);
+    }
+    .weekdays div {
+        font-size: 10px;
+        width: calc(18.2rem / 7);
+    }
+    .selectOption {
+
+        margin: 0px 100px;
+        margin-bottom: -5rem;
+    }
+    .container1 {
+        margin-bottom: -8rem;
+    }
+}
+
+.none-active {
+    color: #7a7a7a8f;
+    /* cursor: not-allowed; */
+}
+.none-active {
+    opacity: 0.5;
+}
+/*for the inline notification css */
+.inline-notification {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    }
+.inline-notification.success {
+    background-color: #f5ceaa;
+    color: #FF7C03
+    }
+.inline-notification.error {
+    background-color: #F8AF5B;
+    color: #fff;
+    }
+.invalid-email-notification {
+    background-color: #F8AF5B;
+    color: #fff;
+}

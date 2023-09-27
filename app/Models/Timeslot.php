@@ -12,7 +12,6 @@ class Timeslot extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'id',
         'start_time',
         'end_time',
         'status',

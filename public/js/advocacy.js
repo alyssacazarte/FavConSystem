@@ -52,6 +52,31 @@ ScrollOut({
 })
 // ================ for the header ==================
 
+// ------ for the language ----------
+
+document.addEventListener('DOMContentLoaded', function() {
+    const currentLanguageButton = document.querySelector('.current-language');
+    const languageList = document.querySelector('.language-list');
+    const languageItems = document.querySelectorAll('.language-list li');
+  
+    currentLanguageButton.addEventListener('click', function() {
+      languageList.classList.toggle('active');
+    });
+  
+    languageItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const selectedLanguage = item.getAttribute('data-lang');
+        const flagImage = item.querySelector('img').cloneNode(true);
+        const languageText = item.textContent.trim();
+  
+        currentLanguageButton.innerHTML = '';
+        currentLanguageButton.appendChild(flagImage);
+        currentLanguageButton.innerHTML += languageText;
+  
+        languageList.classList.remove('active');
+      });
+    });
+  });
 
 
 

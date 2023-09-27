@@ -16,14 +16,33 @@
     <!-- ======== Header ======== -->
     <div style="box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);" class="header">
         <div class="logo">
-            <img src="{{'images/Logo.png'}}" alt="Logo">
+            <img src="{{ asset('images/Logo.png') }}" alt="Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="portfolio">Portfolio</a></li>
-                <li><a href="advocacy">Advocacy</a></li>
+                <li><a href="advocacy">Experience</a></li>
                 <li><a href="about">About</a></li>
-                <li><a class="test" href="contact">Contact</a></li>
+                <li><a class="test" href="contact">Contact</a></li>&nbsp;
+                <div class="language-selector">
+                    <button class="current-language">
+                    <img src="{{ asset('images/us.png') }}" alt="USA Flag">
+                        English
+                    </button>
+                    <ul class="language-list">
+                        <li>
+                            <a  href="/contact/en">
+                                <img src="{{ asset('images/us.png') }}" alt="USA Flag">{{__('messages.English')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="/contact/es">
+                                <img src="{{ asset('images/spain.png') }}">{{__('messages.Espanol')}}
+                            </a>
+                        </li>
+                    
+                    </ul>
+                </div>
             </ul>
             <div class="bar">
                 <i class="open fa-solid fa-bars"></i>
@@ -47,7 +66,7 @@
             <p class="smd">To tell your business's story in the best and most <br> marketable way
                 possible while achieving your <br> marketing, branding, and advertising objectives. <br>
                 <a href="">
-                    <img src="{{'images/arrow-down.png'}}" alt="Arrow">
+                    <img src="{{ asset('images/arrow-down.png') }}" alt="ArrowDown">
                 </a>
             </p>
         </div>
@@ -62,126 +81,66 @@
 
 
     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-
+   
     <form action="{{ route('contact.book') }}" method="POST">
         @csrf
 
         <h2>Select Service</h2>
-        <div class="selectOption">
-
+        <div class="selectOption" >
             <p>Set up consulting Today!</p><br>
             <center>
                 <div class="custom-select">
                     <select name="service_id" id="service_id">
+                    <option>Select Option:</option>
                         @foreach ($services as $service)
-                            <option value="{{ $service->id }}">{{ $service->service_type }}</option>
-
                             <option value="{{ $service->id }}">{{ $service->type }}</option>
                         @endforeach
                     </select>
                 </div>
-
                 <center>
         </div>
+       
     </form>
 
 
 
 
-        <!-- /* ------------- end for the second section ------------------ */ -->
 
 
-        <br><br><br><br><br><br>
+    <!-- /* ------------- end for the second section ------------------ */ -->
 
-        <!-- ============== for the calendar ============  -->
-        <h2>Select Time</h2>
-        <div class="container1">
 
-            <div class="calendar">
-                <div class="month">
-                    <i class="fas fa-angle-left prev"></i>
-                    <div class="date">
-                        <h1></h1>
-                        <p></p>
-                    </div>
-                    <i class="fas fa-angle-right next"></i>
+    <br><br><br><br><br><br>
+
+    <!-- ============== for the calendar ============  -->
+   
+    <h2>Select Time</h2>
+    <div class="container1">
+
+        <div class="calendar">
+            <div class="month">
+                <i class="fas fa-angle-left prev"></i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
                 </div>
-                <div class="weekdays">
-                    <div>SUN</div>
-                    <div>MON</div>
-                    <div>TUE</div>
-                    <div>WED</div>
-                    <div>THU</div>
-                    <div>FRI</div>
-                    <div>SAT</div>
-                </div>
-                <div class="days"></div>
+                <i class="fas fa-angle-right next"></i>
             </div>
-
-
-            <div class="schedule">
-                <div class="time">
-
-                </div>
-                <div class="test"></div>
-                <div class="shadow">
-                    <button class='focus'>07:00</button>
-                    <button class='focus'>07:00</button>
-                    <button class="focus">07:00</button>
-                    <button class='focus'>07:00</button>
-                    <button class='focus'>07:00</button>
-                    <button class='focus'>07:00</button>
-                    <button class='focus'>07:00</button>
-                    <button class='focus'>07:00</button>
-                    <button class='focus'>07:00</button>
-                </div>
-
-                <div class="standardTime">
-                    <small>
-                        US Eastern standard time
-                    </small>
-                </div>
-
+            <div class="weekdays">
+                <div>SUN</div>
+                <div>MON</div>
+                <div>TUE</div>
+                <div>WED</div>
+                <div>THU</div>
+                <div>FRI</div>
+                <div>SAT</div>
             </div>
+            <div class="days"></div>
         </div>
 
 
-
-
-        <br>
-        <!-- -------------------- for the details ------------------------------ -->
-
-        <h2>Add you details</h2>
-        <div class="contact" id="contact">
-            <div class="contactBox">
-                <div class="left">
-
-                    <div class="Fcontact" action="submit">
-                        <br><br>
-                        <div class="genInfo">
-                            <input type="text" placeholder="Name" class="name">
-                            <input type="email" placeholder="Email" class="email">
-                        </div>
-                        <div class="subject">
-                            <input type="text" placeholder="Subject">
-                            <input type="text" placeholder="Subject">
-                        </div><br>
-                        <div class="remind">
-                            <h5>
-                                <img src="{{'images/qmark.png'}}" alt="QuestionMark">
-                                <small>
-                                    Please share some details about your project.
-                                </small>
-                            </h5>
-
-                            <!-- <input type="text"  placeholder="Please share some details about your project."> -->
-                        </div>
-                        <div class="message">
-                            <textarea name="message" rows="5" placeholder="Notes (optional)" required></textarea>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="schedule">
+            <div class="time">
 
             </div>
             <div class="test"></div>
@@ -196,16 +155,20 @@
             </div>
 
         </div>
+       
+    </div>
+   
 
 
 
 
     <br>
     <!-- -------------------- for the details ------------------------------ -->
-
+   
     <h2>Add you details</h2>
+  
     <div class="contact" id="contact">
-        <div class="contactBox">
+        <div class="contactBox" >
             <div class="left">
 
                 <form action="submit">
@@ -229,7 +192,7 @@
                         <!-- <input type="text"  placeholder="Please share some details about your project."> -->
                     </div>
                     <div class="message">
-                        <textarea name="message" rows="5" placeholder="Notes (optional)" id="submit-note"></textarea>
+                        <textarea name="message" rows="5" placeholder="Notes" id="submit-note"></textarea>
                     </div>
 
                 </form>
@@ -237,7 +200,7 @@
 
         </div>
     </div>
-
+    
     <div class="booking">
         <div>
             <small>
@@ -245,40 +208,42 @@
             </small>
             <div>
                 <button class="btnBook" onclick="bookNow()"> Book Now </button>
+                <div class="inline-notification success">Thanks for contacting us! We will get in touch with you shortly.</div>
+                <div class="inline-notification error">Failed! Please fill in all the required fields.</div>
+                <div class="inline-notification invalid-email-notification">Invalid email address. Please use a correct Gmail address format.</div>
             </div>
         </div>
-        <hr class="hr"><br>
+    </div>
+    <hr class="hr"><br>
 
 
 
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">
         <ul>
-            <li><a href="./index">Portfolio</a></li>
-            <li><a href="./advocacy">Advocacy</a></li>
+            <li><a href="./portfolio">Portfolio</a></li>
+            <li><a href="./advocacy">Experience</a></li>
             <li><a href="./about">About Me</a></li>
             <li><a href="./contact">Contact</a></li>
         </ul>
         <hr>
 
+    </div>
+
+    <div class="footer">
+
+        <div class="socialIcons">
+            <h6 style="font-size: 10px;">FOLLOW ME</h6>
+            <a><i class="fa-brands fa-instagram"></i></a>
+            <a><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://github.com/FavioJasso"><i class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/FavioJasso"><i class="fa-brands fa-twitter"></i></a>
         </div>
-        <div class="footer">
-
-            <div class="socialIcons">
-                <h6 style="font-size: 10px;">FOLLOW ME</h6>
-                <a><i class="fa-brands fa-instagram"></i></a>
-                <a><i class="fa-brands fa-facebook"></i></a>
-                <a><i class="fa-brands fa-github"></i></a>
-                <a><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <div class="copy">
-                © Copyright. All rights reserved.
-            </div>
-
+        <div class="copy">
+            © Copyright. All rights reserved.
         </div>
 
     </div>
-
 
     <div class="topBtn">
         <a href="#"><i class="fa-solid fa-angle-up"></i></a><br><br>

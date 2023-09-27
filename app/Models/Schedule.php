@@ -11,31 +11,19 @@ class Schedule extends Model
     use HasFactory;
     // protected $table = 'appointments';
     public $timestamps = false;
-
+ 
     protected $fillable = [
         'date',
-        'status',
         'service_id',
-        // 'timeslot_id'
+        'status',
+
     ];
-
-
-    public function scheduleTimes(){
-        return $this->hasMany(ScheduleTime::class);
-    }
-
-    // public function service(){
-    //     return $this->hasOne(Service::class);
-    // }
 
     public function service()
     {
         return $this->belongsTo(Service::class);
     }
-
-
     public function timeslot(){
-        // return $this->hasMany(Timeslot::class, 'schedule_id', 'id');
         return $this->hasMany(Timeslot::class);
     }
 

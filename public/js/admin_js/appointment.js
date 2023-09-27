@@ -21,38 +21,30 @@ function closeSidebar() {
 
 
 // ====================== for the logout ====================
-// Get the modal element
-const modal = document.getElementById('logoutModal');
-        
-// Get the <span> element that opens the modal
-const span = document.getElementById('logoutBtn');
+const logoutButton = document.getElementById('logoutButton');
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
+const YLogout = document.getElementById('confirmLogout');
+const CLogout = document.getElementById('CLogout');
 
-// Get the buttons to handle logout and cancel
-const confirmLogoutBtn = document.getElementById('confirmLogout');
-const cancelLogoutBtn = document.getElementById('cancelLogout');
-
-// Function to show the modal
-function showModal() {
-    modal.style.display = 'block';
-}
-
-// Function to hide the modal
-function hideModal() {
-    modal.style.display = 'none';
-}
-
-// Event listener to show the modal when the span is clicked
-span.addEventListener('click', showModal);
-
-// Event listener to handle logout and redirect to another page
-confirmLogoutBtn.addEventListener('click', () => {
-    // Redirect to the logout page (replace 'logout.html' with the actual logout page URL)
-    window.location.href = 'logoutTest.html';
+logoutButton.addEventListener('click', () => {
+  overlay.style.display = 'block';
+  modal.style.display = 'block';
 });
 
-// Event listener to handle cancel
-cancelLogoutBtn.addEventListener('click', hideModal);
+CLogout.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  modal.style.display = 'none';
+});
 
+YLogout.addEventListener('click', () => {
+  // Perform logout logic here
+  alert('Logged out successfully!');
+  // You can redirect to a logout page or perform other actions as needed
+
+  overlay.style.display = 'none';
+  modal.style.display = 'none';
+});
 
 
 
@@ -74,3 +66,6 @@ window.onclick = function (event) {
     dropdownContent.style.display = "none";
   }
 }
+
+
+

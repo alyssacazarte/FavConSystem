@@ -15,9 +15,10 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("service_id")->nullable();
             $table->string("date");
             $table->string("status");
-            $table->unsignedBigInteger("service_id")->nullable();
+          
         });
     }
 

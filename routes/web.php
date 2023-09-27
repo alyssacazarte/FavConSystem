@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\PortfolioController;
@@ -11,6 +10,12 @@ use App\Http\Controllers\AdvocacyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminViewController;
+use App\Http\Controllers\LoginController;
+use App\Http\Middleware\AdminRoutes;
+use App\Http\Controllers\LocalizationController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,79 +28,54 @@ use App\Http\Controllers\AdminViewController;
 |
 */
 
-Route::get('/', function () {
-    return view('portfolio');
-});
+    Route::get('/', function () {
+        return view('portfolio');
+    });
 
-//Contact Route
-Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('/contact/book', [ContactController::class, 'book'])->name('contact.book');
-Route::get('/thankyou', [ContactController::class, 'thankyou'])->name('contact.thankyou');
+    Route::middleware('secure')->group(function(){
+    Route::get('/admin-dashboard', [AdminViewController::class, 'homeview']);
+    Route::post('/update/{id}', [AdminViewController::class, 'updateAppointment'])->name('request.form'); 
+    Route::get('/appointment-dashboard', [AdminViewController::class, 'appointmentView'])->name('admin.appointment');
+    Route::get('/service-dashboard', [AdminViewController::class, 'serviceview'])->name('admin.service');
+    Route::get('/admin/service/create', [AdminViewController::class, 'createServices']);
+    Route::post('/admin/service/create/info', [AdminViewController::class, 'addServices']);
+    Route::get('/admin/service/update/{id}', [AdminViewController::class, 'editServices']);
+    Route::post('/admin/service/update/', [AdminViewController::class, 'updateServices']);
+    Route::get('/schedule-dashboard', [AdminViewController::class, 'scheduleview'])->name('admin.schedule');
+    Route::get('/admin/schedule_create', [AdminViewController::class, 'createSchedule']);
+    Route::post('/admin/schedule/create/info', [AdminViewController::class, 'addSchedule']);
+    Route::post('/admin/schedule/update/', [AdminViewController::class, 'editSchedule']);
+    Route::get('/admin/schedule/update/{id}', [AdminViewController::class, 'updateSchedule']);
+    Route::get('/timeslot-dashboard', [AdminViewController::class, 'timeslotview'])->name('admin.timeslot');
+    Route::get('/get-dates/{serviceId}', [AdminViewController::class, 'getDates']);
+    Route::get('/admin/timeslot/create', [AdminViewController::class, 'createTimeSlot']);
+    Route::post('/admin/timeslot/create/info', [AdminViewController::class, 'addTimeSlot']);
+    Route::get('/admin/timeslot/update/{id}', [AdminViewController::class, 'editTimeslots']);
+    Route::post('/admin/timeslot/update/', [AdminViewController::class, 'updateTimeslots'])->name('admin.timeslot');
 
-//Request Route
-Route::post('/update/{req}', [RequestController::class, 'updateStatus'])->name('request.form');
-Route::get('/form', [RequestController::class, 'index'])->name('contact.form');
+    //Logout Route
+    Route::post('/logout', [AdminViewController::class, 'logout'])->name('logout');
+    //ChangePassword Route
+    Route::get('/change-password', [AdminViewController::class, 'showChangePasswordForm'])->name('change-password');
+    Route::post('/change-password', [AdminViewController::class, 'changePassword']);
+    });
+    
+    //Login Route
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
 
-//Schedule Route
-Route::get('/schedule', [ScheduleController::class, 'index']);
-Route::post('/schedule/update/{id}', [ScheduleController::class, 'update'])->name('schedule.update');
-Route::post('/schedule/create', [ScheduleController::class, 'create'])->name('schedule.create');
-Route::get('/schedule/thankyou', [ScheduleController::class, 'thankyou'])->name('schedule.thankyou');
-Route::get('/success', [ScheduleController::class, 'notification'])->name('schedule.notification');
+    //Client Route
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact.index'); 
+    Route::post('/contact/book', [ContactController::class, 'book'])->name('contact.book');
+    Route::get('/thankyou', [ContactController::class, 'thankyou'])->name('contact.thankyou');
+    Route::post('/get-schedule', [ContactController::class, 'getSchedule'])->name('get.schedule');
+    Route::get('/portfolio', [PortfolioController::class, 'index']);
+    Route::get('/advocacy', [AdvocacyController::class, 'index']);
+    Route::get('/about', [AboutController::class, 'index']);
 
-//Portfolio Route
-Route::get('/portfolio', [PortfolioController::class, 'index']);
-//Advocacy Route
-Route::get('/advocacy', [AdvocacyController::class, 'index']);
-//About Route
-Route::get('/about', [AboutController::class, 'index']);
-
-
-//AdminView Route
-Route::get('/appointment-dashboard', [AdminViewController::class, 'appointmentview'])->name('admin.appointment');
-Route::get('/schedule-dashboard', [AdminViewController::class, 'scheduleview'])->name('admin.schedule');
-Route::get('/service-dashboard', [AdminViewController::class, 'serviceview'])->name('admin.service');
-Route::get('/timeslot-dashboard', [AdminViewController::class, 'timeslotview'])->name('admin.timeslot');
-Route::get('/request-dashboard', [AdminViewController::class, 'requestview'])->name('admin.request');
-//Contact Route
-
-
-
-// Admin routes==================================================================
-Route::get('/admin', [AdminController::class, 'admin']);
-// services routes
-Route::get('/admin/services', [AdminController::class, 'services']);
-Route::get('/admin/services/create', [AdminController::class, 'createServices']);
-Route::post('/admin/services/create/info', [AdminController::class, 'addServices']);
-Route::get('/admin/services/update/{id}', [AdminController::class, 'editServices']);
-Route::post('/admin/services/update/', [AdminController::class, 'updateServices']);
-Route::get('/admin/services/delete', [AdminController::class, 'deleteServices']);
-Route::get('/admin/services/delete/{id}', [AdminController::class, 'deleteServices']);
-Route::get('/admin/services/view/{id}', [AdminController::class, 'specificServices']);
-
-Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
-
-
-// Route::get('/admin/services/view/', [AdminController::class, 'viewServices']);
-
-
-// schedule routes
-Route::get('/admin/schedule', [AdminController::class, 'schedule']);
-Route::get('/admin/schedule/create', [AdminController::class, 'createSchedule']);
-Route::post('/admin/schedule/create/info', [AdminController::class, 'addSchedule']);
-Route::post('/admin/schedule/update', [AdminController::class, 'refreshSchedule']);
-Route::get('/admin/schedule/update/{id}', [AdminController::class, 'updateSchedule']);
-
-// requests routes
-Route::get('/admin/requests', [AdminController::class, 'requests']);
-Route::get('/admin/requests/approved', [AdminController::class, 'requests']);
-Route::get('/admin/requests/rejected', [AdminController::class, 'requests']);
-Route::get('/admin/requests/{id}', [AdminController::class, 'settingsRequests']);
-Route::post('/admin/requests/', [AdminController::class, 'editSettingsRequests']);
-
-//requests appointments
-Route::get('/admin/appointments', [AdminController::class, 'appointments']);
+    
 
 
 
-Route::post('/get-schedule', [ContactController::class, 'getSchedule'])->name('get.schedule');
+
+

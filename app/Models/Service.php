@@ -15,8 +15,6 @@ class Service extends Model
     protected $fillable = [
         'type',
         'description',
-        'duration',
-        // 'schedule_id',
         'status'
     ];
 

@@ -24,10 +24,9 @@ class BookingRequest extends FormRequest
     public function rules()
     {
         return [
+            'schedule_id' => 'required|exists:schedules,id',
+            'timeslot_id' => 'required|exists:timeslots,id',
             'service_id' => 'required|exists:services,id',
-            'date' => 'required|date',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i',
             'name' => 'required|string',
             'email' => 'required|email',
             'address' => 'required|string',

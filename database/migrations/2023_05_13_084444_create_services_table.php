@@ -17,7 +17,6 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string("type");
             $table->string("description");
-            $table->string("duration");
             $table->string("status");
         });
     }

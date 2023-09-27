@@ -10,22 +10,32 @@ class Appointment extends Model
 {
     use HasFactory;
     // protected $table = 'appointments';
+    protected $dates = ['created_at',];
     public $timestamps = false;
 
     protected $fillable = [
-        'request_id',
+        'schedule_id',
+        'timeslot_id',
         'service_id',
         'name',
-        'date',
-        'start_time',
-        'end_time',
         'email',
         'address',
-        'phone_number',
+        'phone_no',
         'notes',
+        'created_at',
+        'status',
     ];
-
-    public function request(){
-        return $this->belongsTo(Request::class);
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id');
     }
+    public function schedule()
+    {
+        return $this->belongsTo(Schedule::class, 'schedule_id');
+    }
+    public function timeslot()
+    {
+        return $this->belongsTo(Timeslot::class, 'timeslot_id');
+    }   
+
 }

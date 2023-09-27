@@ -10,6 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="{{ asset('css/advocacy.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/Logo.png') }}" type="image/x-icon">
 
     <title>Advocacy</title>
 </head>
@@ -24,9 +25,27 @@
         <nav>
             <ul>
                 <li><a href="portfolio">Portfolio</a></li>
-                <li><a class="test" href="advocacy">Advocacy</a></li>
+                <li><a class="test" href="advocacy">Experience</a></li>
                 <li><a href="about">About</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="contact">Contact</a></li>&nbsp;
+                <div class="language-selector">
+                    <button class="current-language">
+                    <img src="{{ asset('images/us.png') }}" alt="USA Flag">
+                        English
+                    </button>
+                    <ul class="language-list">
+                        <li>
+                            <a  href="/advocacy/en">
+                                <img src="{{ asset('images/us.png') }}" alt="USA Flag">{{__('messages.English')}}
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="/advocacy/es">
+                                <img src="{{ asset('images/spain.png') }}">{{__('messages.Espanol')}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </ul>
             <div class="bar">
                 <i class="open fa-solid fa-bars"></i>
@@ -228,8 +247,8 @@
     <!-- ======== Footer ======== -->
     <div class="f-footer" id="f-footer">
         <ul>
-            <li><a href="./index">Portfolio</a></li>
-            <li><a href="./advocacy">Advocacy</a></li>
+            <li><a href="./portfolio">Portfolio</a></li>
+            <li><a href="./advocacy">Experience</a></li>
             <li><a href="./about">About Me</a></li>
             <li><a href="./contact">Contact</a></li>
         </ul>
@@ -242,8 +261,8 @@
                 <h6 style="font-size: 10px;">FOLLOW ME</h6>
                 <a><i class="fa-brands fa-instagram"></i></a>
                 <a><i class="fa-brands fa-facebook"></i></a>
-                <a><i class="fa-brands fa-github"></i></a>
-                <a><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://github.com/FavioJasso"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/FavioJasso"><i class="fa-brands fa-twitter"></i></a>
             </div>
             <div class="copy">
                 © Copyright. All rights reserved.

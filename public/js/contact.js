@@ -1,3 +1,30 @@
+
+
+
+
+// --------------------- try -----------------
+let currentStep = 1;
+
+function nextStep() {
+    const currentStepElement = document.getElementById(`step${currentStep}`);
+    currentStepElement.style.display = 'none';
+
+    currentStep++;
+
+    const nextStepElement = document.getElementById(`step${currentStep}`);
+    if (nextStepElement) {
+        nextStepElement.style.display = 'block';
+    } else {
+        alert("You've completed all steps!");
+    }
+}
+
+
+
+
+
+
+
 // ================ for the header ==================
 
 let bar = document.querySelector('.bar')
@@ -31,13 +58,14 @@ ScrollOut({
 // ================ end for the header ==================
 
 
+
 // ================ selecting service ===================
 
 document.addEventListener("change", document.getElementById('service_id'), () => {
     console.log('change')
 });
 
-// ================== for the select servicies ==========================
+// ================== for the select services ==========================
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
@@ -159,7 +187,7 @@ const renderCalendar = () => {
         0
     ).getDay();
 
-    const nextDays = 7 - lastDayIndex - 1;
+    const nextDays = 7 - lastDayIndex;
 
     const months = [
         "January",
@@ -178,7 +206,7 @@ const renderCalendar = () => {
 
     document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
-    document.querySelector(".date p").innerHTML = new Date().toDateString();
+    // document.querySelector(".date p").innerHTML = new Date().toDateString();
 
     let days = "";
 
@@ -191,18 +219,12 @@ const renderCalendar = () => {
         let attr = '';
 
         if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
-            days += `<div class="${cl} today">${i}</div>`;
+            let check = setAttr(i, cl, 'today');
+            days += `<div class="${check.class} today" ${check.attribute}>${i}</div>`;
         }
         else {
-            if (arr.length > 0) {
-                let mon = date.getMonth() + 1;
-                arr.forEach(r => {
-                    if (r.day == i && mon == r.month) {
-                        cl = 'can-click'
-                        attr = `onClick="set(this)" data-id="${r.id}"`;
-                    }
-                })
-            } days += `<div ${attr} class="${cl}">${i}</div>`;
+            let check = setAttr(i, cl, attr);
+            days += `<div ${check.attribute} class="${check.class}">${i}</div>`;
         }
     }
 
@@ -211,6 +233,24 @@ const renderCalendar = () => {
         monthDays.innerHTML = days;
     }
 };
+function setAttr(i, cl, attr) {
+    if (arr.length > 0) {
+        let mon = date.getMonth() + 1;
+
+        arr.forEach(r => {
+            if (r.day == i && mon == r.month) {
+                cl = 'can-click'
+                attr = `onClick="set(this)" data-id="${r.id}"`;
+            }
+        })
+    }
+
+    return {
+        'class': cl,
+        'attribute': attr
+    };
+}
+
 
 document.querySelector(".prev").addEventListener("click", () => {
     date.setMonth(date.getMonth() - 1);
@@ -221,6 +261,7 @@ document.querySelector(".next").addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1);
     renderCalendar();
 });
+
 
 function set(e) {
     let element = document.getElementsByClassName('actives')
@@ -248,7 +289,9 @@ function set(e) {
     console.log(selectedItems);
 }
 
+
 renderCalendar();
+
 
 // Sending request to database
 async function sendRequest(id) {
@@ -286,15 +329,160 @@ function clicked(e) {
 
 
 function bookNow() {
-    document.querySelector('#service').value = selectedItems['service_id'];
-    document.querySelector('#schedule').value = selectedItems['schedule_id'];
-    document.querySelector('#timeslot').value = selectedItems['timeslot_id'];
-    document.querySelector('#name').value = document.querySelector('#submit-name').value;
-    document.querySelector('#email').value = document.querySelector('#submit-email').value;
-    document.querySelector('#address').value = document.querySelector('#submit-address').value;
-    document.querySelector('#phone_no').value = document.querySelector('#submit-phone-no').value;
-    document.querySelector('#notes').value = document.querySelector('#submit-note').value;
+    const serviceId = selectedItems['service_id'];
+    const scheduleId = selectedItems['schedule_id'];
+    const timeslotId = selectedItems['timeslot_id'];
+    const name = document.querySelector('#submit-name').value;
+    const email = document.querySelector('#submit-email').value;
+    const address = document.querySelector('#submit-address').value;
+    const phoneNo = document.querySelector('#submit-phone-no').value;
+    const notes = document.querySelector('#submit-note').value;
+
+    // Validate required fields before proceeding
+    if (!serviceId || !scheduleId || !timeslotId || !name || !email || !address || !phoneNo || !notes) {
+        const errorNotification = document.querySelector('.inline-notification.error');
+        errorNotification.style.display = 'block';
+        setTimeout(() => {
+            fadeOutAndRemove(errorNotification);
+            // resetFormFields();
+        }, 5000);
+        return; // Don't proceed with form submission
+    }
+    // Email validation using regular expression
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email.match(emailRegex)) {
+        const invalidEmailNotification = document.querySelector('.invalid-email-notification');
+        invalidEmailNotification.style.display = 'block';
+        setTimeout(() => {
+            fadeOutAndRemove(invalidEmailNotification);
+        }, 5000);
+        return; // Don't proceed with form submission
+    }
+
+    // Set form values and submit
+    document.querySelector('#service').value = serviceId;
+    document.querySelector('#schedule').value = scheduleId;
+    document.querySelector('#timeslot').value = timeslotId;
+    document.querySelector('#name').value = name;
+    document.querySelector('#email').value = email;
+    document.querySelector('#address').value = address;
+    document.querySelector('#phone_no').value = phoneNo;
+    document.querySelector('#notes').value = notes;
 
     document.getElementById('final-request').submit();
-    // console.log(document.getElementById('final-request'));
 }
+
+
+// ------ for the language ----------
+
+document.addEventListener('DOMContentLoaded', function () {
+    const currentLanguageButton = document.querySelector('.current-language');
+    const languageList = document.querySelector('.language-list');
+    const languageItems = document.querySelectorAll('.language-list li');
+
+    currentLanguageButton.addEventListener('click', function () {
+        languageList.classList.toggle('active');
+    });
+
+    languageItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const selectedLanguage = item.getAttribute('data-lang');
+            const flagImage = item.querySelector('img').cloneNode(true);
+            const languageText = item.textContent.trim();
+
+            currentLanguageButton.innerHTML = '';
+            currentLanguageButton.appendChild(flagImage);
+            currentLanguageButton.innerHTML += languageText;
+
+            languageList.classList.remove('active');
+        });
+    });
+});
+
+//for the inline notification
+const successNotifications = document.querySelectorAll('.success');
+const errorNotifications = document.querySelectorAll('.error');
+const invalidEmailNotifications = document.querySelectorAll('.invalid-email-notification');
+document.querySelectorAll('.btnBook').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const successNotification = successNotifications[index];
+        const errorNotification = errorNotifications[index];
+        const invalidEmailNotification = invalidEmailNotifications[index];
+
+        // Hide all notifications initially
+        successNotification.style.display = 'none';
+        errorNotification.style.display = 'none';
+        invalidEmailNotification.style.display = 'none';
+
+        // Set a timer to fade out the notification after a certain period
+        const fadeOutDelay = 5000;
+
+        if (selectedItemsAreValid()) {
+            successNotification.style.display = 'block';
+            setTimeout(() => {
+                fadeOutAndRemove(successNotification);
+            }, fadeOutDelay);
+        }
+        else if (!selectedEmailIsValid()) {
+            invalidEmailNotification.style.display = 'block';
+            setTimeout(() => {
+                fadeOutAndRemove(invalidEmailNotification);
+                resetFormFields();
+            }, fadeOutDelay);
+        } else {
+            errorNotification.style.display = 'block';
+            setTimeout(() => {
+                fadeOutAndRemove(errorNotification);
+                resetFormFields();
+            }, fadeOutDelay);
+
+        }
+    });
+});
+function selectedEmailIsValid() {
+    const email = document.querySelector('#submit-email').value;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return email.match(emailRegex);
+}
+// function resetFormFields() {
+//     document.querySelector('#service').value = '';
+//     document.querySelector('#schedule').value = '';
+//     document.querySelector('#timeslot').value = '';
+//     document.querySelector('#submit-name').value = '';
+//     document.querySelector('#submit-email').value = '';
+//     document.querySelector('#submit-address').value = '';
+//     document.querySelector('#submit-phone-no').value = '';
+//     document.querySelector('#submit-note').value = '';
+// }
+
+function selectedItemsAreValid() {
+    const requiredInputs = [
+        document.querySelector('#service'),
+        document.querySelector('#schedule'),
+        document.querySelector('#timeslot'),
+        document.querySelector('#submit-name'),
+        document.querySelector('#submit-email'),
+        document.querySelector('#submit-address'),
+        document.querySelector('#submit-phone-no'),
+        document.querySelector('#submit-note'),
+
+
+    ];
+
+    for (const input of requiredInputs) {
+        if (!input.value) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function fadeOutAndRemove(element) {
+    element.style.transition = 'opacity 0.5s';
+    element.style.opacity = '0';
+    setTimeout(() => {
+        element.remove();
+    }, 500); // Remove element after fade-out animation
+}
+
+
