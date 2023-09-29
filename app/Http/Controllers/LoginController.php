@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
         //Login Controller
+        public function checkAppointment(Request $request){
+            return redirect()->route('admin.appointment');
+        }
         public function showLoginForm() {
             return view("layout.admin.login");
         }
@@ -24,5 +27,6 @@ class LoginController extends Controller
                 return response()->json(['status' => 'error']);
             }
         }
+        
         
 }

@@ -65,7 +65,7 @@
     <p><strong>Contact Number:</strong> {{ $appointment->phone_no }}</p>
         <br><br>
     <div class="footer">
-            <p>Click <a href="{{ route('login') }}">here</a> to Approve or Reject this appointment request.</p>
+            <p>Click <a href="{{ route('admin.dashboard.unauthenticated', ['user' => 1]) }}">here</a> to Approve or Reject this appointment request.</p>
         </div>
     </div> 
 </body>

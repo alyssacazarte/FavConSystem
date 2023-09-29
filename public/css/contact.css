@@ -1054,7 +1054,7 @@ p {
     color: red;
   } */
 .focus:focus {
-    color: red;
+    color: #f05d35;
     background-color: rgb(236, 205, 146);
     border: solid 1px orange;
 
@@ -1065,7 +1065,7 @@ p {
   } */
 
 .active:active {
-    color: red;
+    color: #f05d35;
     background-color: rgb(236, 205, 146);
     border: solid 1px orange;
 }

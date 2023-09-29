@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Session;
     Route::get('/', function () {
         return view('portfolio');
     });
+    Route::get('/update/appoint/request/{user}', [LoginController::class, 'checkAppointment'])->name('admin.dashboard.unauthenticated')->middleware('appoint');
 
     Route::middleware('secure')->group(function(){
     Route::get('/admin-dashboard', [AdminViewController::class, 'homeview']);

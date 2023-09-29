@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\User;
 use App\Models\Schedule;
 // use App\Models\Request as Requests;
 use App\Models\Appointment;
@@ -43,7 +44,7 @@ class ContactController extends Controller
         $newAppointment = Appointment::create($request->all());
     
         if ($newAppointment) {
-            $adminEmail = 'leenunuyaa@gmail.com';
+            $adminEmail = User::where('role', 'admin')->value('email');
             Mail::to($adminEmail)->send(new NewAppointmentNotification($newAppointment));
     
             return redirect()->route('contact.index')->with('success');

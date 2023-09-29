@@ -172,8 +172,8 @@
 
             <div class="socialIcons">
                 <h6 style="font-size: 10px;">FOLLOW ME</h6>
-                <a><i class="fa-brands fa-instagram"></i></a>
-                <a><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com/faviojasso?igshid=YWYwM2I1ZDdmOQ=="><i class="fa-brands fa-instagram"></i></a>
+                <!-- <a><i class="fa-brands fa-facebook"></i></a> -->
                 <a href="https://github.com/FavioJasso"><i class="fa-brands fa-github"></i></a>
                 <a href="https://twitter.com/FavioJasso"><i class="fa-brands fa-twitter"></i></a>
             </div>
