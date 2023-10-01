@@ -39,7 +39,7 @@
             <div class="header-right">
                 <span class="material-icons-outlined" id="logoutBtn" onclick="toggleDropdown()"> <img
                         src="{{asset ('images/faviodp.jpg' ) }}" alt="Profile"></span>
-                        <p>{{ Auth::user()->name }}</p>
+                <p>{{ Auth::user()->name }}</p>
                 <div class="dropdown-content" id="dropdownContent">
                     <!-- <div class="dropdown-item"><a href="">Go to site</a>
                     </div> -->
@@ -48,7 +48,7 @@
                         <a href="/change-password">Change Password</a>
                     </div>
 
-                   
+
 
 
                     <div class="dropdown-item" id="logoutButton">Logout</div>
@@ -76,13 +76,13 @@
         <aside id="sidebar">
             <div class="sidebar-title">
                 <div class="sidebar-brand">
-                <img src="{{ asset('images/Logo.png') }}" alt="Logo">
+                    <img src="{{ asset('images/Logo.png') }}" alt="Logo">
                 </div>
                 <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
             </div>
 
             <ul class="sidebar-list">
-            <li class="sidebar-list-item">
+                <li class="sidebar-list-item">
                     <a href="admin-dashboard">
                         <span class="material-icons-outlined">fact_check</span> Dashboard
                     </a>
@@ -125,7 +125,7 @@
 
                     <div class="box-8">
                         <div class="content-box">
-                         <p>Appointment Status</p>
+                            <p>Appointment Status</p>
                             <br />
                             <table>
                                 <tr>
@@ -134,9 +134,9 @@
                                     <th style="color:#f05d35; font-weight:300px;">Canceled</th>
                                 </tr>
                                 <tr>
-                                <td><strong>{{ $pendingCount }}</strong></td>
-                                <td><strong>{{ $approvedCount }}</strong></td>
-                                <td><strong>{{ $rejectedCount }}</strong></td>
+                                    <td><strong>{{ $pendingCount }}</strong></td>
+                                    <td><strong>{{ $approvedCount }}</strong></td>
+                                    <td><strong>{{ $rejectedCount }}</strong></td>
                                 </tr>
 
                             </table>
@@ -152,31 +152,35 @@
                 <br /><br />
 
 
-   <div class="col-div-8">
-    <div style="border-radius: 10px;" class="box">
-        <span style="color: #ff7c03; font-size: 17px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: 600;">
-         <br>Upcoming Appointments
-        <table>
-                                <!-- <tr>
+                <div class="col-div-8">
+                    <div style="border-radius: 10px;" class="box">
+                        <span
+                            style="color: #ff7c03; font-size: 17px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: 600;">
+                            <br> &nbsp;&nbsp; &nbsp;   Upcoming Appointments
+                       
+                        <br><br>
+                        <table>
+                            <!-- <tr>
                                     <th style="color:#ffae3d; font-weight:300px;">Name</th>
                                     <th style="color:#ff8c2e; font-weight:300px;">Time</th>
                                     <th style="color:#f05d35; font-weight:300px;">Status</th>
                                 </tr> -->
-                                
-                                @foreach ($upcomingAppointments as $appointment)
-                                <tr>
-                                <td>{{ $appointment->name }}</td>
-                                <td>{{ $appointment->timeslot->start_time }}
-                                <td style="color:#ffae3d;">{{ $appointment->status }}
+
+                            @foreach ($upcomingAppointments as $appointment)
+
+                            <tr>
+                                <td style="color:   #ff7c03;font-size:12px">{{ $appointment->name }}</td>
+                                <td style="color:   #ff7c03;font-size:12px">{{ $appointment->timeslot->start_time }}
+                                <td style="color:   #ff7c03;font-size:12px">{{ $appointment->status }}
                                 </td>
-                                </tr>
-                                @endforeach
-                            </table>
-    </div>
-</div>
+                            </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
 
                 <div class="col-div-4">
-                    <div class="box-">
+                    <div class="box-   ">
 
                         <div class="wrapper">
                             <header>
