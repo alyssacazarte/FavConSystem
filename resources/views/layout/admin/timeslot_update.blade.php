@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Update Time Slot</title>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <link rel="icon" href="{{ asset('images/Logo.png') }}" type="image/x-icon">
   <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
@@ -56,7 +57,7 @@
 
     }
     select {
-      width: 96%;
+      width: 99.8%;
       padding: 8px;
       margin-top: 5px;
       border: 1px solid #F8AF5B;

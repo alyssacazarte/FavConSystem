@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="icon" href="{{ asset('images/Logo.png') }}" type="image/x-icon">
   <style>
     body {
       background: linear-gradient(to right, #F8AF5B, #f8f6f2);

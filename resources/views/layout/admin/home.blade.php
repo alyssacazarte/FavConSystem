@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="icon" href="{{ asset('images/Logo.png') }}" type="image/x-icon">
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/admin_css/home.css') }}" rel="stylesheet">
@@ -150,7 +151,6 @@
 
                 <div class="clearfix"></div>
                 <br /><br />
-
 
                 <div class="col-div-8">
                     <div style="border-radius: 10px;" class="box">
