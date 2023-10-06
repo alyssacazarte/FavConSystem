@@ -73,10 +73,3 @@ use Illuminate\Support\Facades\Session;
     Route::get('/portfolio', [PortfolioController::class, 'index']);
     Route::get('/advocacy', [AdvocacyController::class, 'index']);
     Route::get('/about', [AboutController::class, 'index']);
-
-    
-
-
-
-
-

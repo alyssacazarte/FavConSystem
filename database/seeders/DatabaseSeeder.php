@@ -17,8 +17,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Schedule::factory(10)->create();
         \App\Models\Service::factory(10)->create();
         \App\Models\Timeslot::factory(10)->create();
-
-        // User::factory(10)->create();
+        User::factory(1)->create();
         // php artisan migrate:fresh seeder
     }
 }
