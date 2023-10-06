@@ -1518,3 +1518,65 @@ h5 small {
     background-color: #F8AF5B;
     color: #fff;
 }
+/* CSS for the modal */
+#confirmationModal {
+    display: none;
+    text-align: center;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: white; */
+    padding: 20px;
+    /* border-radius: 5px; */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); */
+  }
+  
+  #confirmationModal .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 2px solid #F8AF5B;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  #confirmationModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  #confirmationModal button  {
+    color: #FF7C03;
+    border: 1px solid #FF7C03;
+    background-color: transparent;
+    padding: 4px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  #confirmationModal button a {
+    color: #FF7C03;
+  }
+  
+  #confirmationModal button:hover {
+    background-color: #FF7C03;
+    color: #fff;
+  }
+  
+  #confirmationModal button a:hover {
+    color: #fff;
+  }
+  
+  #confirmationModal form,
+  #confirmationModal button {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+
+/* Add other CSS styles as needed */
